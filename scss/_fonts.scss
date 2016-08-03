@@ -1,0 +1,32 @@
+// include all imported fonts here even google fonts
+@charset 'utf-8';
+/** font face **/
+
+@font-face {
+    font-family: 'NexaBold';
+    src: url('../fonts/nexa_bold-webfont.woff2') format('woff2'),
+         url('../fonts/nexa_bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NexaLight';
+    src: url('../fonts/nexa_light-webfont.woff2') format('woff2'),
+         url('../fonts/nexa_light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'CynthoSlabPro';
+    src: url('../fonts/cynthoslabpro-regular-webfont.woff2') format('woff2'),
+         url('../fonts/cynthoslabpro-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+/** font face **/

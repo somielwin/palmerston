@@ -1,0 +1,57 @@
+// ionclude all your related style here in the footer, you can leave it empty if the page has no footer
+footer { 
+	z-index: 2; 
+	position: relative;
+	background: $secondaryBlue;
+	padding: 40px 0;
+}
+
+.f-logo {
+	margin-bottom: 10px;
+}
+
+
+.footer-info {
+	max-width: 300px;
+	color: $coWhite;
+	font-size: 15px;
+
+	p {
+		padding-bottom: 10px;
+	}
+}
+
+.footer-menu {
+
+	h6 {
+		font-size: 16px;
+		color: $coWhite;
+
+
+		&.des-border {
+
+			&:before {
+				width: 28px;
+			}
+			
+		}		
+	}
+
+	a {
+		color: $coWhite;
+	}
+
+	ul {
+
+		li {
+			display: block;
+			padding: 4px 0;
+
+			a {
+				font-size: 12px;
+				display: block;
+				letter-spacing: 1px;
+			}
+		}
+	}
+}

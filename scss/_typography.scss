@@ -1,0 +1,41 @@
+// includes all tags for paragraphs and titles such as header, p, span
+h1 { font-size: 75px; font-family: $fontNexaBold; }
+h2 { font-size: 60px; font-family: $fontNexaBold; }
+h3 { font-size: 45px; font-family: $fontNexaBold; }
+h4 { font-size: 35px; font-family: $fontNexaBold; }
+h5 { font-size: 30px; font-family: $fontNexaBold; }
+h6 { font-size: 20px; font-family: $fontNexaBold; }
+
+.font-size-s {
+	font-size: $fontMedium;
+} 
+
+.font-size-m {
+	font-size: $fontMedium;
+}
+
+.font-size-l {
+	font-size: $fontLarge;
+} 
+
+.font-size-xl {
+	font-size: $fontxLarge;
+} 
+
+.font-size-xxl {
+	font-size: $fontxxLarge;
+} 
+
+.font-nexa-light {
+	font-family: $fontNexaLight;
+}
+
+.font-nexa-bold {
+	font-family: $fontNexaBold;
+	letter-spacing: 1px;
+}
+
+.font-cyntho {
+	font-family: $fontCynthoSlabPro;
+	font-weight: normal;
+}
