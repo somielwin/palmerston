@@ -39,6 +39,11 @@ footer {
 
 	a {
 		color: $coWhite;
+
+		&:hover {
+			color: $coWhite;
+			font-family: $fontNexaBold;
+		}
 	}
 
 	ul {

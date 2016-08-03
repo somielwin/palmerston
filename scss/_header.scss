@@ -3,6 +3,7 @@
 header {
 	position: relative;
 	z-index: 3;
+	box-shadow: 0 2px 5px 0 rgba(0,0,0,0.09),0 2px 10px 0 rgba(0,0,0,0.05);
 }
 
 
@@ -34,6 +35,10 @@ header {
 		top: 0px;
 		right: 120px;
 		font-family: $fontNexaBold;
+		background: $tertiaryOrange;
+
+
+
 	}
 
 	.call-info {
@@ -56,6 +61,19 @@ header {
 	margin-right: 30px;
 	margin-top: 3px;
 
+	&:hover {
+		color: $secondaryDarkOrange;
+
+		span {
+			border: 1px solid $secondaryDarkOrange;
+		}
+
+		.fa {
+			color: $secondaryDarkOrange;
+			
+		}
+	}
+
 	span {
 		width: 25px;
 		height: 25px;
@@ -65,11 +83,13 @@ header {
 		text-align: center;
 		margin-right: 8px;
 		vertical-align: middle;
+		@include transition(all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1));
 
 		.fa {
 			line-height: 25px;
 			font-size: 16px;
 			color: $defaultColor;
+			@include transition(all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1));
 		}
 	}
 }
@@ -138,16 +158,56 @@ header {
 nav {
 
 	> ul {
+		margin-right: -14px;
 
 		> li {
 			display: inline-block;
 			margin-left: 5px;
 			position: relative;
+			border-bottom: 2px solid transparent;
+			@include transition(all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1));
 
-			&:last-child {
+			&:hover {
+				border-bottom: 2px solid $tertiaryOrange;
 
-				a {
-					padding-right: 0;
+				> a {
+					color: $tertiaryOrange;
+				}
+			}
+
+			&.sub-nav {
+
+				&:before {
+					content: '';
+					width: 0;
+					height: 0;
+					border-left: 8px solid transparent;
+					border-right: 8px solid transparent;
+					border-bottom: 8px solid $tertiaryOrange;
+					position: absolute;
+					bottom: -8px;
+					left: 50%;
+					margin-left: -8px;
+					opacity: 0;
+					visibility: hidden;
+					@include transition(all 0s 0s cubic-bezier(0.175, 0.885, 0.32, 1.275));
+				}
+
+				&:hover {
+
+					&:before {
+						bottom: -1px;
+						opacity: 1;
+						visibility: visible;
+						@include transition(all 0.3s 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275));
+					}
+
+					> ul {
+						opacity: 1;
+						visibility: visible;
+						z-index: 99;
+						top: 100%;
+					}
 				}
 			}
 
@@ -156,7 +216,37 @@ nav {
 				font-size: 15px;
 				color: $coGrey;
 				font-family: $fontNexaBold;
-				padding: 10px 15px
+				padding: 10px 14px ;
+			}
+
+			ul {
+				position: absolute;
+				top: 105%;
+				left: 0;
+				background: $tertiaryOrange;
+				min-width: 180px;
+				padding: 10px 0;
+				opacity: 0;
+				visibility: hidden;
+				@include transition(all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275));
+				z-index: -1;
+
+				> li {
+					display: block;
+					float: none;
+
+					a {
+						display: block;
+						color: $coWhite;
+						padding: 5px 15px;
+						display: block;
+						background: $tertiaryOrange;
+
+						&:hover {
+							background: $secondaryBlue;
+						}
+					}
+				}
 			}
 		}
 	}
