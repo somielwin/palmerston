@@ -5951,7 +5951,7 @@ html, body {
 }
 
 .btn.btn-blue:hover {
-  background: #00324d;
+  background: #006399;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
 
@@ -6282,7 +6282,7 @@ html, body {
 }
 
 .hpc-wrap:hover .btn-blue {
-  background: #00324d;
+  background: #006399;
 }
 
 .h-product-categ ul {

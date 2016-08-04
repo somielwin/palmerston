@@ -64,7 +64,7 @@ html, body { height:100%; min-height:100%; }
 		font-family: $fontNexaBold;
 
 		&:hover {
-			background: darken($secondaryBlue, 5%);
+			background: lighten($secondaryBlue, 10%);
 			box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
 		}
 	}
