@@ -7,6 +7,8 @@ body:before,body:after { @include transition(opacity .4s ease-in-out); }
   @include user-select(none);
   @include transition(all 0.5s ease);
   background:$coWhite;
+  position: absolute;
+  z-index: 2;
 }
 .pace-inactive {
   @include opacity(0);

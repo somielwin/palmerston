@@ -20,6 +20,11 @@ function resize() {
 	$('footer').css({marginTop: footerTop});
 	$('#main-wrapper').css({paddingBottom: footerHeight});
 
+	if($('.banner-slider').length > 0) {
+		$('.banner-slider').css({'height' : windowHeight - headerHeight});
+		$('.flexslider').css({'height' : windowHeight - headerHeight});
+	}
+
 	// for vertically middle content
 	$('.bp-middle').each(function() {
 		var bpMiddleHeight = $(this).outerHeight() / 2 * - 1;
@@ -28,8 +33,8 @@ function resize() {
 
 	// for equalizer
 	$('.classname').css({minHeight: 0});
-  var ClassName = get_biggest($('.classname'));
-  $('.classname').css({minHeight: ClassName});
+	var ClassName = get_biggest($('.classname'));
+	$('.classname').css({minHeight: ClassName});
 }
 
 $(window).resize(function() {
@@ -41,11 +46,35 @@ $(document).ready(function() {
 		$('html').addClass('bp-touch');
 	}
 
+	resize();
+
 	$('.flexslider').flexslider({
     	animation: "slide"
   	});
+
+  	$('.owl-carousel').owlCarousel({
+	    loop:true,
+	    margin:15,
+	    responsiveClass:true,
+	    pullDrag: false,
+	    responsive:{
+	        0:{
+	            items:1,
+	            nav:true
+	        },
+	        600:{
+	            items:3,
+	            nav:false
+	        },
+	        1000:{
+	            items:4,
+	            nav:true,
+	            loop:false
+	        }
+	    }
+	});
+
 	
-	resize();
 });
 
 $(window).load(function() {
