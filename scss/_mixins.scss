@@ -242,32 +242,17 @@
   @else if $point == desktop {
     @media (max-width: 1024px) { @content; }
   }
-  @else if $point == non-laptop {
-    @media (min-width: 951px) { @content; }
-  }
-  @else if $point == laptop {
-    @media (max-width: 950px) { @content; }
-  }
   @else if $point == tablet {
-    @media (max-width: 810px) { @content; }
+    @media (max-width: 991px) { @content; }
   }
   @else if $point == tablet2 {
-    @media (max-width: 760px) { @content; }
-  }
-  @else if $point == phablet {
-    @media (max-width: 640px)  { @content; }
+    @media (max-width: 767px) { @content; }
   }
   @else if $point == mobile {
     @media (max-width: 480px)  { @content; }
   }
   @else if $point == mobile2 {
     @media (max-width: 400px)  { @content; }
-  }
-  @else if $point == mobile3 {
-    @media (max-width: 360px)  { @content; }
-  }
-  @else if $point == mobile4 {
-    @media (max-width: 320px)  { @content; }
   }
 }
 // example use

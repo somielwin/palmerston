@@ -22,7 +22,7 @@ function resize() {
 
 	if($('.banner-slider').length > 0) {
 		$('.banner-slider').css({'height' : windowHeight - headerHeight});
-		$('.flexslider').css({'height' : windowHeight - headerHeight});
+		$('.flexslider, .ban-slider-img').css({'height' : windowHeight - headerHeight});
 	}
 
 	// for vertically middle content
@@ -39,6 +39,7 @@ function resize() {
 
 $(window).resize(function() {
 	resize();
+	doCoverImage();
 });
 
 $(document).ready(function() {
@@ -47,15 +48,21 @@ $(document).ready(function() {
 	}
 
 	resize();
+	doCoverImage();
+	initCustomForm();
 
 	$('.flexslider').flexslider({
-    	animation: "slide"
+    	animation: "slide",
+    	start: function(){
+    		doCoverImage();
+    	}
   	});
 
   	$('.owl-carousel').owlCarousel({
 	    loop:true,
 	    margin:15,
 	    responsiveClass:true,
+	    navigationText: false,
 	    pullDrag: false,
 	    responsive:{
 	        0:{
@@ -66,7 +73,12 @@ $(document).ready(function() {
 	            items:3,
 	            nav:false
 	        },
-	        1000:{
+	        768:{
+	            items:3,
+	            nav:true,
+	            loop:false
+	        },
+	        991:{
 	            items:4,
 	            nav:true,
 	            loop:false
@@ -79,6 +91,7 @@ $(document).ready(function() {
 
 $(window).load(function() {
 	resize();
+	doCoverImage();
 });
 
 // preloader once done
@@ -88,3 +101,78 @@ Pace.on('done', function() {
 		$('.pace-inactive').hide();
 	}, 500);
 });
+
+function doCoverImage() {	
+
+	$('.ban-slider-img img').each(function() {
+		coverImage( $(this) );
+	});
+
+}
+
+
+
+function coverImage( image ) {
+
+	var imgObj = image;
+	var iW = imgObj.attr('width');//width(); //width of image ratio
+	var iH = imgObj.attr('height');//.height(); //height of image ratio
+
+	imgObj.width(0).height(0);
+
+	var imgContainer = image.parent();
+	var cW = imgContainer.width(); //width of container or browser
+	var cH = imgContainer.height(); //height of container or browser
+
+	if ( cH > 1 ) {
+		var cP = cW/cH; //ratio of container or browser
+		var iP = iW/iH; //ratio of image
+
+		if ( iP > cP ) { //if image ratio is more than container ratio (if image width is more than container width)
+			iH = cH; //set image height from container height
+			iW = cH * iP; //set image width using container height and image ratio
+
+			imgObj.css({
+				'margin-top': 0,
+				'margin-left': Math.ceil((cW-iW)/2),
+				'width': Math.ceil(iW),
+				'height': Math.ceil(iH),
+
+			}); //center the image and set dimensions
+
+		} else { //if image ratio is less than container ratio (if image height is more than container height)
+			iW = cW; //set image width from container width
+			iH = cW / iP; //set image height from container width and ratio
+
+			imgObj.css({
+				'margin-top': Math.ceil((cH-iH)/2),
+				'margin-left': 0,
+				'width': Math.ceil(iW),
+				'height': Math.ceil(iH)
+			}); //center the image and set dimensions
+		}
+	} else {
+		imgObj.css({
+			'margin-top': 0,
+			'margin-left': 0,
+			'width': 'auto',
+			'height': 'auto'
+
+		});
+	}
+
+}
+
+function initCustomForm() {
+    $('select.custom-select').each(function() {
+        $(this).wrap('<div class="custom-select-wrapper" />');
+        $(this).before('<div class="custom-select-display" />');
+        $(this).change(function() {
+            $(this).siblings('.custom-select-display').text( $(this).find('option:selected').text() );
+        });
+        $(this).keyup(function() {
+            $(this).siblings('.custom-select-display').text( $(this).find('option:selected').text() );
+        });
+        $(this).change();
+    });
+}

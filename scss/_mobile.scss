@@ -1,1 +1,7 @@
 // include all your new classess here that is intended for mobile. Only if necessary but please use breakpoints mixins
+
+@media only screen and (max-width: 1200px) {
+	.owl-nav {
+		display: none;
+	}
+}
