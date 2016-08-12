@@ -128,34 +128,9 @@
 
 	.owl-carousel {
 		margin-top: 25px;
-	}
-
-	.pc-img {
-		width: 100%;
-		height: auto;
-		position: relative;
 
 		@include breakpoint(mobile) {
-			padding: 0px 30px;
-		}
-
-		img {
-			width: 100%;
-			height: auto;
-			display: block;
-		}
-	}
-
-	.pc-info {
-		text-align: center;
-		padding: 15px 10px;
-
-		p {
-			padding-bottom: 5px;
-		}
-
-		.btn {
-			margin-top: 15px;
+			margin-top: 5px;
 		}
 	}
 
@@ -245,6 +220,44 @@
 			float: none;
 			margin-top: 80px;
 			width: 100%;
+		}
+	}
+}
+
+
+.pc-img {
+	width: 100%;
+	height: auto;
+	position: relative;
+
+	@include breakpoint(mobile) {
+		padding: 0px 30px;
+	}
+
+	img {
+		width: 100%;
+		height: auto;
+		display: block;
+	}
+}
+
+.pc-info {
+	text-align: center;
+	padding: 15px 10px;
+
+	@include breakpoint(mobile) {
+		padding: 10px;
+	}
+
+	p {
+		padding-bottom: 5px;
+	}
+
+	.btn {
+		margin-top: 15px;
+
+		@include breakpoint(mobile) {
+			margin-top: 5px;
 		}
 	}
 }
@@ -424,6 +437,10 @@
 
 .h-news-wrap {
 
+	@include breakpoint(mobile) {
+		margin-bottom: 30px;
+	}
+
 	.row {
 		margin-left: -10px;
 		margin-right: -10px;
@@ -559,6 +576,10 @@
 			border: 2px solid $secondaryDarkOrange;
 			border-left: none;
 			border-right: none;
+
+			.product-categ-wrap & {
+				border: 2px solid transparent;
+			}
 		}
 
 		.btn-blue {
@@ -626,6 +647,11 @@
 			}
 		}
 	}
+}
+
+.hpc-wrap {
+	width: 100%;
+	position: relative;
 }
 
 .hpc-img {

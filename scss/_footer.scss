@@ -4,10 +4,13 @@ footer {
 	position: relative;
 	background: $secondaryBlue;
 	padding: 40px 0 0;
-	margin-top: 20px;
 
-	@include breakpoint(tablet2) {
-		padding-bottom: 48px;
+	@include breakpoint(tablet) {
+		padding-bottom: 88px;
+
+		&.removed-space {
+			padding-bottom: 15px;
+		}
 	}
 }
 
@@ -18,6 +21,7 @@ footer {
 
 	@include breakpoint(mobile) {
 		font-size: 12px;
+		padding-top: 20px;
 	}
 }
 
@@ -45,6 +49,7 @@ footer {
 	h6 {
 		font-size: 16px;
 		color: $coWhite;
+		text-transform: uppercase;
 
 
 		&.des-border {
@@ -79,7 +84,19 @@ footer {
 				font-size: 12px;
 				display: block;
 				letter-spacing: 1px;
+
+				@include breakpoint(tablet2) {
+					font-size: 14px;
+				}
 			}
+		}
+	}
+
+	.col-sm-6 {
+
+		&:nth-child(3) {
+			border: 1px solid red;
+			clear: left;
 		}
 	}
 }
@@ -103,6 +120,68 @@ footer {
 
 		&.sl-google {
 			background: #d34836;
+		}
+	}
+}
+
+.footer-accordion {
+
+	@include breakpoint(tablet2) {
+
+		h6 {
+			cursor: pointer;
+		}
+
+		ul {
+			display: none;
+			margin-bottom: 25px;
+		}
+	}
+
+	h6 {
+		display: block;
+
+		&.active {
+			.fm-croshair {
+
+				&:after {
+					@include transform(rotate(180deg));
+					opacity: 0;
+				}
+			}
+		}
+	}
+
+	.fm-croshair {
+		position: relative;
+		width: 25px;
+		height: 25px;
+		top: 8px;
+		margin-right: 20px;
+		float: right;
+		display: none;
+
+		@include breakpoint(tablet2) {
+			display: block;
+		}
+
+		&:before, &:after {
+			content :'';
+			display: block;
+			float: none;
+			clear: both;
+			width: 10px;
+			height: 2px;
+			position: absolute;
+			top: 0;
+			right: 0;
+			background: $primaryOrange;
+			opacity: 1;
+			@include transition(all 0.3s ease);
+		}
+
+		&:after {	
+			@include transform(rotate(90deg));
 		}
 	}
 }

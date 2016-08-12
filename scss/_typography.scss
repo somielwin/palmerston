@@ -1,8 +1,23 @@
 // includes all tags for paragraphs and titles such as header, p, span
-h1 { font-size: 75px; font-family: $fontNexaBold; }
-h2 { font-size: 60px; font-family: $fontNexaBold; }
+h1 { 
+	font-size: 75px; 
+	font-family: $fontNexaBold;
+
+	@include breakpoint(tablet2) {
+		font-size: 58px;
+	}
+
+	@include breakpoint(mobile) {
+		font-size: 38px;
+	}
+}
+h2 { 
+	font-size: 60px; 
+	font-family: $fontNexaBold; 
+}
 h3 { 
-	font-size: 45px; font-family: $fontNexaBold;
+	font-size: 45px; 
+	font-family: $fontNexaBold;
 
 	@include breakpoint(tablet2) {
 		font-size: 32px;
@@ -13,7 +28,8 @@ h3 {
 	}
 }
 h4 { 
-	font-size: 35px; font-family: $fontNexaBold;
+	font-size: 35px; 
+	font-family: $fontNexaBold;
 
 	@include breakpoint(tablet2) {
 		font-size: 24px;
@@ -24,7 +40,8 @@ h4 {
 	}
 }
 h5 { 
-	font-size: 30px; font-family: $fontNexaBold;
+	font-size: 30px; 
+	font-family: $fontNexaBold;
 
 	@include breakpoint(tablet2) {
 		font-size: 18px;
@@ -35,7 +52,8 @@ h5 {
 	}
 }
 h6 { 
-	font-size: 20px; font-family: $fontNexaBold; 
+	font-size: 20px; 
+	font-family: $fontNexaBold; 
 
 	@include breakpoint(tablet2) {
 		font-size: 14px;
@@ -75,3 +93,16 @@ h6 {
 	font-family: $fontCynthoSlabPro;
 	font-weight: normal;
 }
+
+.font-proxima {
+	font-family:'proxima_nova_rgregular';
+}
+
+.font-proxima-bold {
+	font-family:'proxima_nova_rgbold';
+}
+
+.font-proxima-light {
+	font-family:'proxima_novalight';
+}
+

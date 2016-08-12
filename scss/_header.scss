@@ -4,30 +4,79 @@ header {
 	position: relative;
 	z-index: 3;
 	box-shadow: 0 2px 5px 0 rgba(0,0,0,0.07),0 2px 10px 0 rgba(0,0,0,0.09);
-}
+	background: $coWhite;
+	left: 0;
+	@include transition(all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1));
 
+	&.slide-left {
+		left: -270px;
+	}
+
+	@include breakpoint(tablet) {
+		position: fixed;
+		width: 100%;
+		top: 0;
+		left: 0;
+		background: rgba($coWhite, 0.8);
+	}
+}
 
 .top-header {
 	background: $tertiaryOrange;
 	padding: 8px 0;
 
-	.container {
-		position: relative;
-
-
-		@include breakpoint(tablet2) {
-			padding-right: 0;
-			padding-left: 0;
-		}
-	}
-
-	@include breakpoint(tablet2) {
+	@include breakpoint(tablet) {
 		position: fixed;
 		width: 100%;
 		bottom: 0;
 		z-index: 999;
 		padding: 13px 5px;
+		@include transition(all 0.3s cubic-bezier(0.55, 0.055, 0.675, 0.19));
+
+		&.removed {
+			bottom: -100%;
+		}
 	} 
+
+	.container {
+		position: relative;
+
+
+		@include breakpoint(tablet) {
+			padding-right: 0;
+			padding-left: 0;
+		}
+	}
+
+
+}
+
+.mobile-bottom-close {
+	display: none;
+	background: $coBlack;
+	width: 25px;
+	height: 25px;
+	position: absolute;
+	top: -13px;
+	right: 5px;
+	text-align: center;
+	border-radius: 50%;
+
+	@include breakpoint(mobile) {
+		display: block;
+	}
+
+	.fa {
+		color: $coWhite;
+		display: inline-block;
+		line-height: 25px;
+		position: relative;
+		top: -1px;
+	}
+}
+
+.discount-wrap {
+	background: $tertiaryOrange;
 
 	p {
 		color: $coWhite;
@@ -67,6 +116,71 @@ header {
 
 	.call-info {
 		display: inline-block;
+	}
+}
+
+.payment-offer-wrap {
+
+	label {
+		display: inline-block;
+		color: $coWhite;
+		font-size: 18px;	
+
+		@include breakpoint(tablet2) {
+			display: none;
+		}
+	}
+
+	ul {
+		text-align: center;
+		display: inline-block;
+		width: auto;
+
+		li {
+			width: auto;
+			text-align: center;
+			color: $coWhite;
+			display: inline-block;
+			padding: 0px 20px;
+
+			@include breakpoint(tablet) {
+				padding: 0px 10px;
+			}
+
+			@include breakpoint(tablet2) {
+				padding: 0px 5px 5px;
+			}
+
+			a {
+				color: $coWhite;
+				font-size: 16px;
+
+				@include breakpoint(tablet2) {
+					font-size: 14px;
+				}
+
+
+				.fa {
+					font-size: 24px;
+					display: inline-block;
+					vertical-align: middle;
+					padding-right: 10px;
+
+					@include breakpoint(mobile) {
+						font-size: 18px;
+						padding-right: 2px;
+					}
+				}
+			}
+		}
+	}
+}
+
+.payment-offer {
+	padding-top: 8px;
+
+	@include breakpoint(tablet) {
+		padding-top: 0;
 	}
 }
 

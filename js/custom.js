@@ -32,6 +32,7 @@ function resize() {
 	$('.classname').css({minHeight: 0});
 	var ClassName = get_biggest($('.classname'));
 	$('.classname').css({minHeight: ClassName});
+
 }
 
 $(window).resize(function() {
@@ -48,6 +49,14 @@ $(document).ready(function() {
 	doCoverImage();
 	initCustomForm();
 
+	// Footer Mobile Accordion
+	$('.footer-accordion h6').click(function(){
+		$('.footer-accordion h6').removeClass('active');
+		$('.footer-accordion ul').stop(true, false).slideUp();
+		$(this).addClass('active').next('ul').stop(true, false).slideDown();
+	});
+	
+	// Home FlexSlider
 	$('.flexslider').flexslider({
     	animation: "slide",
     	start: function(){
@@ -55,6 +64,7 @@ $(document).ready(function() {
     	}
   	});
 
+	// Product Sale Carousel
   	$('.owl-carousel').owlCarousel({
 	    loop:true,
 	    margin:15,
@@ -80,18 +90,20 @@ $(document).ready(function() {
 	            loop:false
 	        },
 	        992:{
-	            items:5,
+	            items:4,
 	            nav:true,
 	            loop:false
 	        }
 	    }
 	});
 
+  	// Mobile Hamburger
 	$('.header-hamburger').click(function(){
         var _this = $(this);
     	
     	$('#main-container').toggleClass('slide-left');
     	$('.menu').toggleClass('slide-left');
+    	$('header').toggleClass('slide-left');
 
 	    setTimeout(function(){
             _this.toggleClass('active');
@@ -99,13 +111,21 @@ $(document).ready(function() {
 
     });	
 
+	// 
     $('#main-container.slide-left').click(function(){
+    	console.log('testtt');
     	$('#main-container').removeClass('slide-left');
     	$('.menu').removeClass('slide-left');
+    	$('header').removeClass('slide-left');
 
     	 setTimeout(function(){
             $('.header-hamburger').toggleClass('active');
         }, 400);
+    });
+
+    $('.mobile-bottom-close').click(function(){
+    	$(this).closest('.top-header').addClass('removed');
+    	$('footer').addClass('removed-space');
     });
 });
 
@@ -124,7 +144,7 @@ Pace.on('done', function() {
 
 function doCoverImage() {	
 
-	$('.ban-slider-img img').each(function() {
+	$('.ban-slider-img img, .banner-img-wrap img').each(function() {
 		coverImage( $(this) );
 	});
 

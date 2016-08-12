@@ -5,3 +5,18 @@
 		display: none;
 	}
 }
+
+@media only screen and (min-width: 768px) {
+	.footer-menu {
+		ul {
+			display: block !important;
+		}
+	}
+
+	.footer-accordion {
+
+		h6 {
+			pointer-events: none;
+		}
+	}
+}
