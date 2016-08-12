@@ -1,10 +1,46 @@
 // includes all tags for paragraphs and titles such as header, p, span
 h1 { font-size: 75px; font-family: $fontNexaBold; }
 h2 { font-size: 60px; font-family: $fontNexaBold; }
-h3 { font-size: 45px; font-family: $fontNexaBold; }
-h4 { font-size: 35px; font-family: $fontNexaBold; }
-h5 { font-size: 30px; font-family: $fontNexaBold; }
-h6 { font-size: 20px; font-family: $fontNexaBold; }
+h3 { 
+	font-size: 45px; font-family: $fontNexaBold;
+
+	@include breakpoint(tablet2) {
+		font-size: 32px;
+	}
+
+	@include breakpoint(mobile) {
+		font-size: 22px;
+	}
+}
+h4 { 
+	font-size: 35px; font-family: $fontNexaBold;
+
+	@include breakpoint(tablet2) {
+		font-size: 24px;
+	}
+
+	@include breakpoint(mobile) {
+		font-size: 18px;
+	}
+}
+h5 { 
+	font-size: 30px; font-family: $fontNexaBold;
+
+	@include breakpoint(tablet2) {
+		font-size: 18px;
+	}
+
+	@include breakpoint(tablet2) {
+		font-size: 16px;
+	}
+}
+h6 { 
+	font-size: 20px; font-family: $fontNexaBold; 
+
+	@include breakpoint(tablet2) {
+		font-size: 14px;
+	}
+}
 
 .font-size-s {
 	font-size: $fontMedium;

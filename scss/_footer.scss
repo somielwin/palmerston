@@ -1,19 +1,32 @@
 // ionclude all your related style here in the footer, you can leave it empty if the page has no footer
 footer { 
-	z-index: 2; 
+	z-index: 4; 
 	position: relative;
 	background: $secondaryBlue;
 	padding: 40px 0 0;
+	margin-top: 20px;
+
+	@include breakpoint(tablet2) {
+		padding-bottom: 48px;
+	}
 }
 
 .copyright {
 	color: $coWhite;
 	padding-top: 40px;
 	padding-bottom: 8px;
+
+	@include breakpoint(mobile) {
+		font-size: 12px;
+	}
 }
 
 .f-logo {
 	margin-bottom: 10px;
+
+	img {
+		max-width: 100%;
+	}
 }
 
 
@@ -35,6 +48,7 @@ footer {
 
 
 		&.des-border {
+			margin-bottom: 5px;
 
 			&:before {
 				width: 28px;
@@ -53,6 +67,9 @@ footer {
 	}
 
 	ul {
+		@include breakpoint(mobile) {
+			margin-bottom: 20px;
+		}
 
 		li {
 			display: block;
@@ -66,3 +83,28 @@ footer {
 		}
 	}
 }
+
+.social-list {
+	margin-bottom: 25px;
+
+	a {
+		display: inline-block;
+		width: 27px;
+		height: 27px;
+		margin-right: 5px;
+		background: $primaryOrange;
+		color: $coWhite;
+		line-height: 27px;
+		text-align: center;
+
+		&.sl-facebook {
+			background: #3b5998;
+		}
+
+		&.sl-google {
+			background: #d34836;
+		}
+	}
+}
+
+
