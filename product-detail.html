@@ -15,6 +15,7 @@
 		<script src="js/html5.js"></script>
 		<script src="js/lib/modernizr-2.8.3.min.js"></script>
 		<script src="js/pace.min.js"></script>
+
 	</head>
 	<body>
 		<section id="main-container">
@@ -89,21 +90,81 @@
 				<div class="container">
 					<div class="product-detail-wrap">
 						<div class="row">
-							<div class="col-md-6">
+							<div class="col-md-6 col-sm-6">
 								<div class="pd-big-img">
 									
 								</div>
+								<div class="pd-seal">
+									<h6 class="font-cyntho">Materials:</h6>
+									<ul>
+										<li>
+											<div class="pd-seal-img"><img src="images/product/seal1.jpg" alt=""></div>
+											<p>Solid NZ Pine</p>
+										</li>
+										<li>
+											<div class="pd-seal-img"><img src="images/product/seal2.png" alt=""></div>
+											<p>Blackwood colour</p>
+										</li>
+										<li>
+											<div class="pd-seal-img"><img src="images/product/seal3.png" alt=""></div>
+										</li>
+									</ul>
+								</div>
 							</div>
-							<div class="col-md-6">
+							<div class="col-md-6 col-sm-6">
 								<div class="pd-desc-wrap">
-									<h1 class="pd-title font-cyntho">2a: Rio Queen <br>Bedframe</h1>
-									<h2 class="pd-price font-cyntho"><span class="pd-price-label">Price</span> <span class="old-price">$000.00</span> <span class="new-price">$000.00</span></h2>
+									<h1 class="pd-title font-cyntho">GEL Super Comfort</h1>
+									<h2 class="pd-price font-cyntho"><span class="pd-price-label">Price</span> <span class="old-price">$000.00</span> <span class="new-price">$2,025.00</span></h2>
+									<div class="product-size">
+										<p>Product Size:</p>
+										<div class="row">
+											<div class="col-md-6 col-sm-3 col-xs-4">
+												<select class="custom-select">
+													<option value="">Size</option>
+													<option value="">King</option>
+													<option value="">Queen</option>
+												</select>
+											</div>
+										</div>	
+									</div>
 									<h4>Product Details:</h4>
-									<p>Luxury solid timber bedframe</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque mi arcu, placerat vel nunc vitae, feugiat tincidunt nisi. Sed blandit,</p>
+									<p>Pocket Spring</p>
+									<p>Super luxurious mattress. Incorporating state of the art Gel infused memory foam. Gel is much cooler than traditional memory foam. Advanced Dynacoil pocket springs provide perfect support with minimal partner disturbance.</p>
 									<a href="#" class="btn btn-enquire btn-tertiary">Enquiry</a>
 								</div>
 							</div>
+						</div>
+					</div>
+				</div>
+				<div class="product-enquiry">
+					<div class="container">
+						<a href="#" class="p-enquiry-backbtn"><i class="fa fa-angle-left" aria-hidden="true"></i> <span>Back </span></a>
+						<div class="p-enquiry-wrap inquire-form">
+							<h5 class="inquire-title font-cyntho">Inquire About This Product</h5>
+							<form method="post" action="">
+								<div class="input-wrap">
+						            <input type="text" id="name-inquire" name="" value="" required="required" onchange="this.setAttribute('value', this.value);"></input>
+						            <label for="name-inquire">Your Name</label>
+						        </div>
+						        <div class="input-wrap">
+						            <input type="email" id="email-inquire" name="" value="" placeholder="juan@gmail.com" required="required" onchange="this.setAttribute('value', this.value);"></input>
+						            <label for="email-inquire">Email</label>
+						        </div>
+						        <div class="input-wrap">
+						            <input type="tel" id="contact-inquire" name="" value="" required="required" onchange="this.setAttribute('value', this.value);"></input>
+						            <label for="contact-inquire">Contact Number</label>
+						        </div>
+						        <div class="input-wrap">
+						            <input type="email" id="product-inquire" name="" value="" required="required" onchange="this.setAttribute('value', this.value);"></input>
+						            <label for="product-inquire">Product Name</label>
+						        </div>
+						        <div class="input-wrap">
+						            <textarea placeholder="Message"></textarea>
+						        </div>
+						        <div class="text-center">
+									<input class="btn btn-blue" type="submit" name="" value="SUBMIT"></input>
+								</div>
+							</form>
 						</div>
 					</div>
 				</div>
@@ -179,7 +240,7 @@
 						<div class="col-md-7 col-sm-8">
 							<div class="footer-menu">
 								<div class="row">
-									<div class="col-md-3 col-sm-3 footer-accordion">
+									<div class="col-md-3 col-sm-3 product-accordion">
 										<h6 class="des-border">bedroom <span class="fm-croshair"></span></h6>
 										<ul>
 											<li><a href="#">Bed Frames</a></li>							
@@ -189,13 +250,13 @@
 											<li><a href="#">Wardrobes</a></li>
 										</ul>
 									</div>
-									<div class="col-md-3 col-sm-3 footer-accordion">
+									<div class="col-md-3 col-sm-3 product-accordion">
 										<h6 class="des-border">Dining <span class="fm-croshair"></span></h6>
 										<ul>
 											<li><a href="#">Dining Suites</a></li>	
 										</ul>
 									</div>
-									<div class="col-md-3 col-sm-3 footer-accordion">
+									<div class="col-md-3 col-sm-3 product-accordion">
 										<h6 class="des-border">Living <span class="fm-croshair"></span></h6>
 										<ul>
 											<li><a href="#">Buffet</a></li>							
@@ -205,7 +266,7 @@
 											<li><a href="#">Wardrobes</a></li>
 										</ul>
 									</div>
-									<div class="col-md-3 col-sm-3 footer-accordion">
+									<div class="col-md-3 col-sm-3 product-accordion">
 										<h6 class="des-border">Mattresses <span class="fm-croshair"></span></h6>
 										<ul>
 											<li><a href="#">Double</a></li>							

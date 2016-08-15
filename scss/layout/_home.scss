@@ -395,7 +395,7 @@
 	}
 
 	.box {
-		padding: 12px 10px;
+		padding: 12px 5px;
 		width: 100%;
 		position: relative;
 		overflow: hidden;
@@ -909,13 +909,7 @@
 }
 
 .inquire-form {
-	background-color: $tertiaryOrange;
-	float:left;
-	width: 33.33%;
-	margin-left: -10px;
-	min-height:554px;
-	padding: 0px 10px;
-
+	
 	.inquire-title {
 		color: $coWhite;
 		padding: 25px 0 20px;
@@ -931,6 +925,8 @@
 		textarea {
 			height: 110px;
 			resize: none;
+			border: 1px solid $coGrey;
+			background: $coWhite;
 
 
 			&::-webkit-input-placeholder { /* Chrome/Opera/Safari */
@@ -951,8 +947,14 @@
 			}
 		}
 
-		input[type="email"], input[type="text"], input[type="tel"] {
+		input[type="email"], input[type="text"], input[type="tel"], textarea {
 			padding: 11px 15px;
+			border: 1px solid $coGrey;
+			background: $coWhite;
+
+			@include breakpoint(tablet2) {
+				padding: 6px 10px;
+			}
 		}
 
 		input[type="email"] {
@@ -996,7 +998,7 @@
 	    }
 
 	    input[required]:valid + label, input[required]:focus + label, input:not([value=""]) + label{
-			color: $coWhite;
+			xcolor: $coWhite;
 			font-size: 12px;
 
 		}
@@ -1004,6 +1006,10 @@
 
 	input[type="submit"] {
 		border: none;
+
+		@include breakpoint(tablet2) {
+			padding: 12px 25px;
+		}
 	}
 }
 

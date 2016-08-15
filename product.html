@@ -9,6 +9,7 @@
 
 		<link rel="stylesheet" href="css/flexslider.css" media="all"/>
 		<link rel="stylesheet" href="css/owl.carousel.css" media="all">
+		<link rel="stylesheet" href="css/jquery.nouislider.css" media="all">
 		<link rel="stylesheet" href="css/style.css" media="all"/>
 
 		<!--[if lt IE 9]> <script src="js/css3-mediaqueries.js"></script> <![endif]-->
@@ -104,39 +105,82 @@
 						<p class="font-size-m font-nexa-bold"><span>LATEST PROMO <span class="promo-amount">10%</span> OFF ON ALL PRODUCTS </span></p>
 					</div>
 				</div>
-				<div class="container">
+				<div class="container filter-left-side">
 					<div class="filter-wrap">
-						<div class="row small-pad-row">
-							<div class="col-md-3 col-sm-3 col-xs-12 small-pad-col">
-								<label class="filter-label">Filter Products:</label>
+						
+						<div class="filter-box">
+							<div class="product-accordion activated">
+								<h6 class="des-border">Mattresses <span class="fm-croshair"></span></h6>
+								<ul>
+									<li><a href="#">Bed Frames</a></li>							
+									<li><a href="#">Beside Table</a></li>
+									<li><a href="#">Pillows</a></li>
+									<li><a href="#">Tallboys</a></li>
+									<li><a href="#">Wardrobes</a></li>
+								</ul>
 							</div>
-							<div class="col-md-2 col-sm-3 col-xs-4 small-pad-col">
-								<select class="custom-select">
-									<option value="">Type</option>
-									<option value="">Sample</option>
-									<option value="">Sample</option>
-								</select>
+							<div class="product-accordion">
+								<h6 class="des-border">Dining <span class="fm-croshair"></span></h6>
+								<ul>
+									<li><a href="#">Dining Suites</a></li>	
+								</ul>
 							</div>
-							<div class="col-md-2 col-sm-3 col-xs-4 small-pad-col">
-								<select class="custom-select">
-									<option value="">Price</option>
-									<option value="">Sample</option>
-									<option value="">Sample</option>
-								</select>
+							<div class="product-accordion">
+								<h6 class="des-border">Living <span class="fm-croshair"></span></h6>
+								<ul>
+									<li><a href="#">Buffet</a></li>							
+									<li><a href="#">Coffee Table</a></li>
+									<li><a href="#">Lounges &amp; Sofas</a></li>
+									<li><a href="#">TV Units</a></li>
+									<li><a href="#">Wardrobes</a></li>
+								</ul>
 							</div>
-							<div class="col-md-2 col-sm-3 col-xs-4 small-pad-col">
-								<select class="custom-select">
-									<option value="">Sort By</option>
-									<option value="">Sample</option>
-									<option value="">Sample</option>
-								</select>
+							<div class="product-accordion">
+								<h6 class="des-border">Mattresses <span class="fm-croshair"></span></h6>
+								<ul>
+									<li><a href="#">Double</a></li>							
+									<li><a href="#">Foam</a></li>
+									<li><a href="#">King</a></li>
+									<li><a href="#">King Single</a></li>
+									<li><a href="#">Queen</a></li>
+									<li><a href="#">Single</a></li>
+								</ul>
 							</div>
-							<div class="col-md-3 col-sm-2 col-xs-12 pos-static filter-btn-wrap">
+						</div>
+						<div class="filter-box">
+							<div class="price-slider">
+								<label class="filter-label">Filter by Price:</label>
+								<div class="noUiSlider" id="noUiSlider"></div>
+								<span class="ps-min-price"></span>
+								<span class="ps-max-price"></span>
+								<input type="hidden" id="qs-min-price" name="price_fm" class="price_fm" />
+								<input type="hidden" id="qs-max-price" name="price_to" class="price_to" />
+							</div>
+							<div class="pos-static filter-btn-wrap">
 								<a href="#" class="btn btn-tertiary btn-filter"><span class="filter-text">FILTER NOW</span> <span class="filter-icon"><i class="fa fa-search" aria-hidden="true"></i></span></a>
 							</div>
 						</div>
 					</div>
 					<div class="product-listings-wrap">
+						<div class="sort-by">
+							<select class="custom-select">
+								<option value="">Sort By:</option>
+								<option value="">Types</option>
+								<option value="">Size</option>
+								<option value="">All</option>
+							</select>
+						</div>
+						<div class="pagination-wrap">
+							<ul>
+								<li><a href="#" class="pagi-prev"><i class="fa fa-angle-double-left" aria-hidden="true"></i></a></li>
+								<li><a href="#" class="pagi-active">1</a></li>
+								<li><a href="#">2</a></li>
+								<li><a href="#">3</a></li>
+								<li><span class="pagi-ellipsis">...</span></li>
+								<li><a href="#">10</a></li>
+								<li><a href="#" class="pagi-next"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a></li>
+							</ul>
+						</div>
 						<ul class="product-listings">
 							<li>
 								<div class="pcarousel-item">
@@ -226,7 +270,7 @@
 							</li>
 						</ul>
 
-						<div class="pagination-wrap">
+						<div class="pagination-wrap bottom">
 							<ul>
 								<li><a href="#" class="pagi-prev"><i class="fa fa-angle-double-left" aria-hidden="true"></i></a></li>
 								<li><a href="#" class="pagi-active">1</a></li>
@@ -311,7 +355,7 @@
 						<div class="col-md-7 col-sm-8">
 							<div class="footer-menu">
 								<div class="row">
-									<div class="col-md-3 col-sm-3 footer-accordion">
+									<div class="col-md-3 col-sm-3 product-accordion">
 										<h6 class="des-border">bedroom <span class="fm-croshair"></span></h6>
 										<ul>
 											<li><a href="#">Bed Frames</a></li>							
@@ -321,13 +365,13 @@
 											<li><a href="#">Wardrobes</a></li>
 										</ul>
 									</div>
-									<div class="col-md-3 col-sm-3 footer-accordion">
+									<div class="col-md-3 col-sm-3 product-accordion">
 										<h6 class="des-border">Dining <span class="fm-croshair"></span></h6>
 										<ul>
 											<li><a href="#">Dining Suites</a></li>	
 										</ul>
 									</div>
-									<div class="col-md-3 col-sm-3 footer-accordion">
+									<div class="col-md-3 col-sm-3 product-accordion">
 										<h6 class="des-border">Living <span class="fm-croshair"></span></h6>
 										<ul>
 											<li><a href="#">Buffet</a></li>							
@@ -337,7 +381,7 @@
 											<li><a href="#">Wardrobes</a></li>
 										</ul>
 									</div>
-									<div class="col-md-3 col-sm-3 footer-accordion">
+									<div class="col-md-3 col-sm-3 product-accordion">
 										<h6 class="des-border">Mattresses <span class="fm-croshair"></span></h6>
 										<ul>
 											<li><a href="#">Double</a></li>							
@@ -363,6 +407,7 @@
 		<script src="js/plugins.js"></script>
 		<script src="js/jquery.flexslider.js"></script>
 		<script src="js/owl.carousel.js"></script>
+		<script src="js/noUiSlider.min.js"></script>
 		<script src="js/custom.js"></script>
 	</body>
 </html>

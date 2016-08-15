@@ -50,10 +50,16 @@ $(document).ready(function() {
 	initCustomForm();
 
 	// Footer Mobile Accordion
-	$('.footer-accordion h6').click(function(){
-		$('.footer-accordion h6').removeClass('active');
-		$('.footer-accordion ul').stop(true, false).slideUp();
-		$(this).addClass('active').next('ul').stop(true, false).slideDown();
+	$('.product-accordion h6').click(function(){
+		
+		
+		if($(this).hasClass('active')) {
+			$('.product-accordion h6').removeClass('active').next('ul').stop(true, false).slideUp();
+		} else {
+			$('.product-accordion h6').removeClass('active');
+			$('.product-accordion ul').stop(true, false).slideUp();
+			$(this).addClass('active').next('ul').stop(true, false).slideDown();
+		}
 	});
 	
 	// Home FlexSlider
@@ -127,6 +133,58 @@ $(document).ready(function() {
     	$(this).closest('.top-header').addClass('removed');
     	$('footer').addClass('removed-space');
     });
+
+    // Product Inquiry 
+    $('.pd-desc-wrap .btn-enquire').click(function(e){
+    	e.preventDefault();
+    	$(this).addClass('active');
+    	$('.product-enquiry').slideDown(300);
+
+    	setTimeout(function(){
+    		var offset = $('.product-enquiry').offset().top + $('.product-enquiry').outerHeight(false) - $(window).height();
+    		console.log(offset);
+    		$("html, body").animate({ scrollTop: offset });
+    	}, 400);
+    });
+
+    // Close Product Inquiry 
+    $('.p-enquiry-backbtn').click(function(e){
+    	e.preventDefault();
+    	console.log('test');
+    	$('.product-enquiry').css({'display' : 'none'});
+    });
+
+    $('.noUiSlider').noUiSlider({
+		start: [ 0, 100000 ],
+		margin: 20,
+		connect: true,
+		step: 100,
+		format: wNumb({
+			decimals: 0,
+			thousand: ','
+		}),
+		range: {
+			'min': 0,
+			'max': 100000
+		}
+	}).on({
+		slide: function() {
+			assignSliderVal();
+		}
+	})
+
+	function assignSliderVal() {
+		var newVal = $('.noUiSlider').val();
+		var newValFirst = newVal[0].replace(/,/g, "");
+		var newValSecond = newVal[1].replace(/,/g, "");
+
+		$('.ps-min-price').html(( (newValFirst <= 10000000) ?  ('$ ' +newVal[0])  : '10M+' ));
+		//$('.noUi-handle-lower').html('<span>' + 'P' + newVal[0] + '</span>');
+		$('.ps-max-price').html(( (newValSecond > 10000000) ? '10M+' : ('$ '+newVal[1]) ));
+		$('input[name="price_fm"]').val( newValFirst);
+		$('input[name="price_to"]').val( (newValSecond > 10000000) ? 10050000 : newValSecond );
+	}
+	assignSliderVal();
 });
 
 $(window).load(function() {

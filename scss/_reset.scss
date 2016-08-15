@@ -1,7 +1,7 @@
 /* Addresses margins handled incorrectly in IE 6/7. */
 * { margin: 0; padding: 0; outline:none; }
 html, body { font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; margin:0; padding:0;}
-body { font-size: $fontMedium; line-height: 1.2; color: $defaultColor; }
+body { font-size: $fontLarge; line-height: 1.2; color: $defaultColor; }
 
 /*
  * Addresses `font-family` inconsistency between `textarea` and other form

@@ -42,6 +42,10 @@ body {
 		
 		.breacrumb-wrap {
 			padding: 40px 0 12px 0;
+
+			@include breakpoint(tablet) {
+				padding-top: 12px;
+			}
 		}
 	}
 }
@@ -111,7 +115,7 @@ body {
 		background: $tertiaryOrange;
 		font-family: $fontNexaBold;
 
-		&:hover {
+		&:hover, &.active {
 			background: darken($tertiaryOrange, 6%);
 			box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
 		}
@@ -227,10 +231,18 @@ body {
 	position: relative;
 	margin-bottom: 20px;
 
+	@include breakpoint(tablet2) {
+		margin-bottom: 15px;
+	}
+
 	input[type="email"], input[type="text"], input[type="tel"], textarea {
 		width: 100%;
 		border: none;
 		padding: 8px 15px;
+
+		@include breakpoint(tablet2) {
+			padding: 6px 10px;
+		}
 	}
 
 	input[value=""] + label, input[value=""] + label {
@@ -353,7 +365,7 @@ body {
 }
 
 .inner-discount {
-	padding: 20px 0 50px 0;
+	padding: 20px 0 25px 0;
 
 	@include breakpoint(mobile) {
 		padding: 15px 0;
@@ -367,7 +379,21 @@ body {
 }
 
 .pagination-wrap {
-	padding: 30px 0;
+	padding: 0px;
+	float: right;
+
+	@include breakpoint(tablet2) {
+		display: none;
+	}
+
+	&.bottom {
+		clear: right;
+		padding: 30px 0;
+
+		@include breakpoint(tablet2) {
+			display: block;
+		}
+	}
 
 	ul {
 		text-align: center;
@@ -416,7 +442,7 @@ body {
 	display: block; 
 	position: relative; 
 	height: 32px; 
-	background: #2e2e2e;  
+	background: #f2f2f2;  
 	box-sizing: border-box; 
 	border: 1px solid #878787;
 
@@ -433,7 +459,7 @@ body {
 		height: 0;
 		border-left: 8px solid transparent;
 		border-right: 8px solid transparent;
-		border-top: 8px solid $coWhite;
+		border-top: 8px solid $coGrey;
 		margin-top: -4px;
 	}
 
@@ -445,7 +471,7 @@ body {
 	display: block; 
 	height: 30px; 
 	margin-right: 25px; 
-	color: $coWhite; 
+	color: $coGrey; 
 	overflow: hidden; 
 	padding: 11px 8px 0px 8px; 
 	white-space: nowrap; 
