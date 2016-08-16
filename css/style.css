@@ -6862,6 +6862,10 @@ body {
   height: 190px;
   float: left;
   margin-right: 10px; }
+  .blog-pic img {
+    max-width: 100%;
+    height: auto;
+    background-position: center; }
   @media (max-width: 991px) {
     .blog-pic {
       height: 230px; } }
@@ -6944,7 +6948,8 @@ body {
     color: #e15a29; }
   .recent-post i,
   .category-list i {
-    padding-right: 10px; }
+    padding-right: 10px;
+    color: #b96500; }
 
 .help-info h6 {
   color: #e15a29; }
@@ -6972,6 +6977,18 @@ body {
 /*SINGLE ARTICLE*/
 .blog-content {
   padding-right: 50px; }
+  .blog-content h1 {
+    font-size: 32px; }
+  .blog-content h2 {
+    font-size: 28px; }
+  .blog-content h3 {
+    font-size: 26px; }
+  .blog-content h4 {
+    font-size: 22px; }
+  .blog-content h5 {
+    font-size: 18px; }
+  .blog-content h6 {
+    font-size: 16px; }
   @media (max-width: 991px) {
     .blog-content {
       padding-right: 0px; } }
@@ -6981,7 +6998,7 @@ body {
   .blog-content .bl-title {
     padding-bottom: 5px;
     color: #e15a29;
-    font-size: 26px; }
+    /*font-size: 32px;*/ }
   .blog-content .bl-author {
     padding-left: 10px; }
   .blog-content i {
@@ -6999,6 +7016,10 @@ body {
     width: 100%;
     height: 300px;
     margin-bottom: 10px; }
+    .blog-content .article-pic img {
+      max-width: 100%;
+      height: auto;
+      background-position: center; }
   .blog-content .btn {
     padding: 9px 25px; }
 
