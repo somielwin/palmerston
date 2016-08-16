@@ -6930,6 +6930,10 @@ body {
 .recent-post,
 .category-list {
   padding-bottom: 15px; }
+  @media (max-width: 767px) {
+    .recent-post,
+    .category-list {
+      padding-bottom: 0px; } }
   .recent-post a,
   .category-list a {
     color: #4d4d4d; }
@@ -7038,54 +7042,60 @@ body {
     padding-right: 0px;
     font-size: 18px; }
 
-.bloglinks-accordion {
-  /*.fm-croshair {
-		position: relative;
-		width: 25px;
-		height: 25px;
-		top: 8px;
-		margin-right: 20px;
-		float: right;
-		display: none;
+@media (max-width: 767px) {
+  .bloglinks-accordion h6 {
+    cursor: pointer; }
+  .bloglinks-accordion ul {
+    display: none;
+    margin-bottom: 25px; } }
 
-		@include breakpoint(tablet2) {
-			display: block;
-		}
+.bloglinks-accordion h6 {
+  display: block; }
+  .bloglinks-accordion h6.active .fm-croshair:before {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg); }
 
-		&:before, &:after {
-			content :'';
-			display: block;
-			float: none;
-			clear: both;
-			width: 10px;
-			height: 2px;
-			position: absolute;
-			top: 0;
-			right: 0;
-			background: $primaryOrange;
-			opacity: 1;
-			@include transition(all 0.3s ease);
-		}
-
-		&:after {	
-			@include transform(rotate(90deg));
-		}
+.fm-croshair {
+  position: relative;
+  width: 25px;
+  height: 25px;
+  top: 0px;
+  margin-right: 20px;
+  float: right;
+  display: none;
+  /*&:after {	
+		@include transform(rotate(90deg));
 	}*/ }
   @media (max-width: 767px) {
-    .bloglinks-accordion h6 {
-      cursor: pointer; }
-    .bloglinks-accordion ul {
-      display: none;
-      margin-bottom: 25px; } }
-  .bloglinks-accordion h6 {
-    display: block; }
-    .bloglinks-accordion h6.active .fm-croshair:after {
-      -webkit-transform: rotate(180deg);
-      -moz-transform: rotate(180deg);
-      -ms-transform: rotate(180deg);
-      -o-transform: rotate(180deg);
-      transform: rotate(180deg);
-      opacity: 0; }
+    .fm-croshair {
+      display: block; } }
+  .fm-croshair:before {
+    content: "\f105";
+    display: block;
+    float: none;
+    clear: both;
+    /*width: 10px;
+		height: 2px;*/
+    position: absolute;
+    top: 0px;
+    right: 0;
+    color: #b96500;
+    opacity: 1;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 20px; }
 
 @media only screen and (min-width: 768px) {
   .recent-post ul, .category-list ul {

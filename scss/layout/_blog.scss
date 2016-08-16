@@ -143,6 +143,11 @@
 .category-list {
 
 	padding-bottom: 15px;
+	
+	@include breakpoint(tablet2) {
+		padding-bottom: 0px
+	}
+
 
 	a {
 		color: $defaultColor;
@@ -336,45 +341,52 @@
 		&.active {
 			.fm-croshair {
 
-				&:after {
-					@include transform(rotate(180deg));
-					opacity: 0;
+				&:before {
+					@include transform(rotate(90deg));
 				}
 			}
 		}
 	}
 
-	/*.fm-croshair {
-		position: relative;
-		width: 25px;
-		height: 25px;
-		top: 8px;
-		margin-right: 20px;
-		float: right;
-		display: none;
+}
 
-		@include breakpoint(tablet2) {
-			display: block;
-		}
+.fm-croshair {
+	position: relative;
+	width: 25px;
+	height: 25px;
+	top: 0px;
+	margin-right: 20px;
+	float: right;
+	display: none;
 
-		&:before, &:after {
-			content :'';
-			display: block;
-			float: none;
-			clear: both;
-			width: 10px;
-			height: 2px;
-			position: absolute;
-			top: 0;
-			right: 0;
-			background: $primaryOrange;
-			opacity: 1;
-			@include transition(all 0.3s ease);
-		}
+	@include breakpoint(tablet2) {
+		display: block;
+	}
 
-		&:after {	
-			@include transform(rotate(90deg));
-		}
+	&:before {
+		content: "\f105";
+		display: block;
+		float: none;
+		clear: both;
+		/*width: 10px;
+		height: 2px;*/
+		position: absolute;
+		top: 0px;
+		right: 0;
+		color: $primaryOrange;
+		opacity: 1;
+		@include transition(all 0.3s ease);
+		display: inline-block;
+		font: normal normal normal 14px/1 FontAwesome;
+		font-size: inherit;
+		text-rendering: auto;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		font-size: 20px;
+	}
+
+	/*&:after {	
+		@include transform(rotate(90deg));
 	}*/
 }
 
