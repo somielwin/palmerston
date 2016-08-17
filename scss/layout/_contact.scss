@@ -1,0 +1,317 @@
+.contact-banner {
+	height: 205px;
+	position: relative;
+
+	&:before {
+		background: $coWhite;
+		bottom: 0;
+		content: '';
+		display: block;
+		height: 50px;
+		left: -50%;
+		position: absolute;
+		right: 0;
+		transform: skewY(-3deg);
+		transform-origin: 100%;
+		z-index: 2;
+		width: inherit;
+		top: inherit;
+
+
+		@include breakpoint(tablet2) {
+			display: none;
+		}
+	}
+
+	&:after {
+		background: $coWhite;
+		bottom: 0;
+		content: '';
+		display: block;
+		height: 50px;
+		left: 0;
+		position: absolute;
+		right: 0;
+		transform: skewY(3deg);
+		transform-origin: 0;
+		z-index: 2;
+
+		@include breakpoint(tablet2) {
+			display: none;
+		}
+	}
+}
+
+.contact-wrap {
+	padding-bottom: 70px;
+
+	@include breakpoint(tablet2) {
+		padding-bottom: 30px;
+		padding-top: 30px;
+	}
+
+	.inquire-form {
+		padding: 40px 10px;
+		margin-top: -40px;
+		max-width: 400px;
+		background: $tertiaryOrange;
+		position: relative;
+		z-index: 99;
+
+		@include breakpoint(tablet2) {
+			margin-top: 20px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		@include breakpoint(mobile) {
+			margin-left: -15px;
+			margin-right: -15px;
+		}
+
+		.inquire-title {
+			font-size: 35px;
+			text-align: left;
+			padding-top: 0;
+
+			@include breakpoint(tablet) {
+				font-size: 28px;
+			}
+		}
+
+		.input-wrap {
+
+			input[required]:valid + label, input[required]:focus + label, input:not([value=""]) + label{
+				color: $coWhite;
+				font-size: 12px;
+
+			}
+		}
+	}
+
+	.custom-select-wrapper {
+		height: 44px;
+
+		@include breakpoint(tablet2) {
+			height: 34px;
+		}
+
+		.custom-select-display {
+			padding-top: 22px;
+			height: 42px;
+
+			@include breakpoint(tablet2) {
+				height: 32px;
+				padding-top: 10px;
+			}
+		}
+	}
+
+}
+
+.contact-box {
+	padding: 25px 0 0;
+
+	h6 {
+		font-size: 20px;
+		color: $secondaryBlue;
+		margin-bottom: 10px;
+	}
+
+}
+
+.contact-info {
+	padding-left: 45px;
+	padding-top: 30px;
+
+	@include breakpoint(tablet) {
+		padding-top: 10px;
+		padding-left: 0;
+	}
+
+	h3 {
+		line-height: 45px;
+		color: $secondaryBlue;
+		margin-bottom: 8px;
+
+		@include breakpoint(tablet) {
+			font-size: 32px;
+			line-height: 35px;
+		}
+	}
+
+	p {
+		line-height: 20px;
+	}
+}
+
+.contact-intro {
+
+	h3 {
+		line-height: 45px;
+		color: $secondaryBlue;
+		margin-bottom: 8px;
+
+		@include breakpoint(tablet) {
+			font-size: 32px;
+			line-height: 35px;
+		}
+	}
+
+	p {
+		line-height: 20px;
+	}
+}
+
+
+.delivery-wrap {
+	padding: 40px 0;
+	background-color: #e1e2e2;
+
+	@include breakpoint(mobile) {
+		padding: 30px 0;
+	}
+}
+
+.delivery-options {
+
+	ul {
+		margin: 0 -8px;
+	}
+
+	li {
+		width: 25%;
+		float: left;
+
+		@include breakpoint(tablet2) {
+			width: 50%;
+
+			&:nth-child(3) {
+				.del-op-item {
+					border-left: 0;
+				}
+			}
+
+		}
+
+		&:first-child {
+			.del-op-item {
+				border-left: 0;
+			}
+		}
+	}
+}
+
+.del-op-item {
+	padding: 10px 18px;
+	text-align: center;
+	border-left: 1px solid #a5a5a5;
+	min-height: 148px;
+	margin-bottom: 10px;
+
+	@include breakpoint(tablet) {
+		padding: 8px;
+	}
+
+
+	h6 {
+		color: $secondaryBlue;
+		margin-bottom: 15px;
+
+		@include breakpoint(tablet2) {
+			font-size: 18px;
+		}
+	}
+
+	p {
+		padding-bottom: 10px;
+
+		@include breakpoint(mobile) {
+			font-size: 13px;
+		}
+	}
+
+	img {
+		max-width: 100%;
+	}
+}
+
+.location-tabs {
+	background: $secondaryBlue;
+	color: $coWhite;
+
+	ul {
+		text-align: center;
+		padding-top: 40px;
+	}
+
+	li {
+		display: inline-block;
+		text-align: center;
+		padding: 0px 50px;
+
+		@include breakpoint(tablet2) {
+			padding: 0px 0px;
+		}
+	}
+}
+
+#map {
+	height: 505px;
+
+	iframe {
+		border: none;
+	}
+}
+
+.l-tabs-btn {
+	text-align: left;
+	display: block;
+
+	p {
+		color: $coWhite;
+
+		span {
+			display: block;
+			color: $tertiaryOrange;
+			font-size: 15px;
+
+			@include breakpoint(mobile) {
+				font-size: 12px;
+			}
+		}
+	}
+
+	.lt-marker {
+		display: inline-block;
+		width: 50px;
+		float: left;
+		font-size: 52px;
+		text-align: center;
+		position: relative;
+		top: -10px;
+
+		@include breakpoint(mobile) {
+			top: -7px;
+			width: 40px;
+			font-size: 42px;
+		}
+	}
+
+	.lt-text {
+		padding-left: 40px;
+		font-family: $fontNexaBold;
+		font-size: 20px;
+		white-space: nowrap;
+
+		@include breakpoint(mobile) {
+			font-size: 18px;
+			padding-right: 10px;
+		}
+	}
+}
+
+.contact-tab-map {
+	display: none;
+}
+

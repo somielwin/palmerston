@@ -159,14 +159,6 @@
 				display: block;
 			}
 
-			.fm-croshair {
-				display: block;
-				margin-right: 5px;
-
-				&:before {
-					@include transform(rotate(90deg))
-				}
-			}
 		}
 
 		ul {
@@ -228,7 +220,7 @@
 
 		&.btn-filter {
 
-			@include breakpoint(tablet) {
+			/*@include breakpoint(tablet) {
 				top: 0;
 				padding: 0;
     			background: none;
@@ -247,16 +239,16 @@
 					box-shadow: none;
 					@include transform(scale(1.1));
 				}
-			}
+			}*/
 
-			@include breakpoint(tablet2) {
+			/*@include breakpoint(tablet2) {
 				position: relative;
 				top: 0;
 				margin-top: 0;
 				right: 0;
 				height: auto;
 				padding: 5px;
-			}
+			}*/
 		}
 	}
 }
@@ -343,6 +335,7 @@
 				font-size: 16px;
 				text-align: center;
 				display: block;
+				margin-bottom: 15px;
 			}
 		}
 	}
@@ -350,17 +343,17 @@
 
 .filter-text {
 
-	@include breakpoint(tablet) {
+	/*@include breakpoint(tablet) {
 		display: none;
-	}
+	}*/
 }
 
 .filter-icon {
 	display: none;
 
-	@include breakpoint(tablet) {
+	/*@include breakpoint(tablet) {
 		display: block;
-	}
+	}*/
 }
 
 .filter-btn-wrap {
@@ -497,6 +490,14 @@
 
 	.custom-select-wrapper {
 		background: $secondaryBlue;
+		
+		&:after {
+			border-top: 8px solid $coWhite;
+		}
+
+		.custom-select-display {
+			color: $coWhite;
+		}
 	}
 }
 
@@ -529,7 +530,7 @@
 	.btn-enquire {
 		padding: 12px 24px;
 		text-transform: uppercase;
-		margin-top: 30px;
+		margin-top: 18px;
 
 		@include breakpoint(tablet) {
 			margin-top: 7px;

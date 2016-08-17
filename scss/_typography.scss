@@ -24,7 +24,7 @@ h3 {
 	}
 
 	@include breakpoint(mobile) {
-		font-size: 22px;
+		font-size: 28px;
 	}
 }
 h4 { 
@@ -32,11 +32,11 @@ h4 {
 	font-family: $fontNexaBold;
 
 	@include breakpoint(tablet2) {
-		font-size: 24px;
+		font-size: 26px;
 	}
 
 	@include breakpoint(mobile) {
-		font-size: 18px;
+		font-size: 20px;
 	}
 }
 h5 { 
@@ -44,11 +44,11 @@ h5 {
 	font-family: $fontNexaBold;
 
 	@include breakpoint(tablet2) {
-		font-size: 18px;
+		font-size: 24px;
 	}
 
 	@include breakpoint(tablet2) {
-		font-size: 16px;
+		font-size: 18px;
 	}
 }
 h6 { 
@@ -56,7 +56,11 @@ h6 {
 	font-family: $fontNexaBold; 
 
 	@include breakpoint(tablet2) {
-		font-size: 14px;
+		font-size: 18px;
+	}
+
+	@include breakpoint(mobile) {
+		font-size: 16px;
 	}
 }
 

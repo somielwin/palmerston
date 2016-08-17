@@ -49,6 +49,21 @@ $(document).ready(function() {
 	doCoverImage();
 	initCustomForm();
 
+	$('.animated').appear(function() {
+        var element = $(this);
+        var animation = element.data('animation');
+        var animationDelay = element.data('delay');
+        if(animationDelay) {
+          setTimeout(function(){
+              element.addClass( animation + " visible" );
+              element.removeClass('hiding');
+          }, animationDelay);
+        } else {
+          element.addClass( animation + " visible" );
+          element.removeClass('hiding');
+        }               
+    }, {accY: -90});
+
 	// Footer Mobile Accordion
 	$('.product-accordion h6').click(function(){
 		
@@ -56,6 +71,7 @@ $(document).ready(function() {
 		if($(this).hasClass('active')) {
 			$('.product-accordion h6').removeClass('active').next('ul').stop(true, false).slideUp();
 		} else {
+			$('.product-accordion activated').stop(true, false).slideUp();
 			$('.product-accordion h6').removeClass('active');
 			$('.product-accordion ul').stop(true, false).slideUp();
 			$(this).addClass('active').next('ul').stop(true, false).slideDown();
@@ -147,6 +163,17 @@ $(document).ready(function() {
     	}, 400);
     });
 
+    $('.bloglinks-accordion h6').click(function(){
+		
+		if($(this).hasClass('active')) {
+			$('.bloglinks-accordion h6').removeClass('active').next('ul').stop(true, false).slideUp();
+		} else {
+			$('.bloglinks-accordion h6').removeClass('active');
+			$('.bloglinks-accordion ul').stop(true, false).slideUp();
+			$(this).addClass('active').next('ul').stop(true, false).slideDown();
+		}
+	});
+
     // Close Product Inquiry 
     $('.p-enquiry-backbtn').click(function(e){
     	e.preventDefault();
@@ -154,25 +181,28 @@ $(document).ready(function() {
     	$('.product-enquiry').css({'display' : 'none'});
     });
 
-    $('.noUiSlider').noUiSlider({
-		start: [ 0, 100000 ],
-		margin: 20,
-		connect: true,
-		step: 100,
-		format: wNumb({
-			decimals: 0,
-			thousand: ','
-		}),
-		range: {
-			'min': 0,
-			'max': 100000
-		}
-	}).on({
-		slide: function() {
-			assignSliderVal();
-		}
-	})
+    if( $('.noUiSlider').length > 0) {
 
+    	$('.noUiSlider').noUiSlider({
+			start: [ 0, 100000 ],
+			margin: 20,
+			connect: true,
+			step: 100,
+			format: wNumb({
+				decimals: 0,
+				thousand: ','
+			}),
+			range: {
+				'min': 0,
+				'max': 100000
+			}
+		}).on({
+			slide: function() {
+				assignSliderVal();
+			}
+		})
+    }
+    
 	function assignSliderVal() {
 		var newVal = $('.noUiSlider').val();
 		var newValFirst = newVal[0].replace(/,/g, "");
@@ -184,7 +214,6 @@ $(document).ready(function() {
 		$('input[name="price_fm"]').val( newValFirst);
 		$('input[name="price_to"]').val( (newValSecond > 10000000) ? 10050000 : newValSecond );
 	}
-	assignSliderVal();
 });
 
 $(window).load(function() {

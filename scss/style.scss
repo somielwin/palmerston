@@ -10,6 +10,7 @@
 
 // unique imports
 @import 'pace'; // for pace preloader
+@import 'animate'; // for pace preloader
 
 // all customized styles
 @import 'header'; // the header style css
@@ -19,4 +20,5 @@
 @import 'layout/home'; // the main style css
 @import 'layout/product'; // the main style css
 @import 'layout/blog'; // the main style css
+@import 'layout/contact'; // the main style css
 @import 'mobile'; // the mobile style css

@@ -22,5 +22,19 @@
 		}
 	}
 
+	.hidden-tablet {
+		display: none;
+	}
 	
+	.hidden-mobile {
+		display: block;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+
+
+	.hidden-mobile {
+		display: none;
+	}
 }

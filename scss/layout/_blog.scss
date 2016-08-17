@@ -1,14 +1,49 @@
 .blog-main-wrapper {
-	
 	padding-top: 60px;
+	padding-bottom: 30px;
 
 	@include breakpoint(tablet) {
-		padding-top: 20px;
+		padding-top: 40px;
 
 	}
 	@include breakpoint(mobile) {
-		padding-top: 20px;
+		padding-top: 30px;
 
+	}
+
+	.subscription-form {
+		margin-top: 0;
+		width: auto;
+		margin-left: -15px;
+		margin-right: -15px;
+		padding: 20px 10px;
+		margin-bottom: 20px;
+
+		@include breakpoint(tablet) {
+			padding: 20px 15px;
+			margin: 0 auto 15px;
+			max-width: 480px;
+		}
+
+		@include breakpoint(tablet2) {
+			padding: 20px 15px;
+			max-width: 480px;
+		}
+
+		@include breakpoint(mobile) {
+			margin: 0 -15px 20px;
+		}
+
+		&:before {
+			display: none;
+		}
+
+		h4 {
+			font-size: 24px;
+			text-align: left;
+			margin-bottom: 15px;
+			line-height: 28px;
+		}
 	}
 }
 
@@ -152,6 +187,10 @@
 	a {
 		color: $defaultColor;
 
+		@include breakpoint(tablet2) {
+			font-size: 14px;
+		}
+
 		&:hover {
 			color: $primaryOrange;
 		}
@@ -162,6 +201,10 @@
 	li {
 		border-top: 1px dotted grey;
 		padding: 7px 0;
+
+		@include breakpoint(tablet2) {
+			padding: 5px 0;
+		}
 	}
 
 	h6 {
@@ -212,6 +255,8 @@
 /*SINGLE ARTICLE*/
 .blog-content {
 
+	padding-right:50px;
+
 	h1{
 		font-size: 32px;
 	}
@@ -237,7 +282,26 @@
 
 	}
 
-	padding-right:50px;
+	> ul {
+		padding-left: 20px;
+		margin: 20px 0;
+
+		> li {
+			padding: 5px 0;
+			list-style-type: disc;
+		}
+	}
+
+	> ol {
+		padding-left: 20px;
+		margin: 20px 0;
+
+		> li {
+			padding: 5px 0;
+			list-style-type: decimal;
+		}
+	}
+
 
 	@include breakpoint(tablet) {
 		padding-right: 0px;
@@ -251,6 +315,7 @@
 		padding-bottom:5px;
 		color: $tertiaryOrange;
 		/*font-size: 32px;*/
+		font-size: 26px;
 	}
 
 	.bl-author {
@@ -284,13 +349,22 @@
 		img{
 			max-width: 100%;
 			height: auto;
-			background-position: center;
 			
 		}
 	}
 
 	.btn {
 		padding: 9px 25px;
+	}
+
+	.read-more {
+		font-style: italic;
+		font-size: 14px;
+		color: $tertiaryOrange;
+
+		&:hover {
+			color: $primaryOrange;
+		}
 	}
 }
 
@@ -327,6 +401,7 @@
 
 		h6 {
 			cursor: pointer;
+			margin-bottom: 5px;
 		}
 
 		ul {
