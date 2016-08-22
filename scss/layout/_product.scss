@@ -149,6 +149,25 @@
 		border: 1px solid #ccc;
 		position: relative;
 		padding: 40px 30px 25px;
+
+		&:after {
+			content:'';
+			display: block;
+			float: none;
+			clear: both;
+		}
+
+		.search-field {
+			width: 100%;
+
+		}
+
+		.help-info {
+
+			a {
+				white-space: normal;
+			}
+		}
 	}
 
 	.product-accordion {
@@ -504,6 +523,10 @@
 
 .pd-desc-wrap {
 
+	@include breakpoint(tablet2) {
+		margin-top: 20px;
+	}
+
 	h4 {
 		color: #808285;
 
@@ -642,6 +665,10 @@
 	ul {
 		margin: 15px -15px 0;
 
+		@include breakpoint(mobile) {
+			text-align: center;
+		}
+
 		&:after {
 			content:'';
 			display: block;
@@ -654,6 +681,14 @@
 			float: left;
 			padding: 0px 15px;
 			text-align: center;
+
+			@include breakpoint(mobile) {
+				width: 48%;
+				display: inline-block;
+				text-align: center;
+				float: none;
+				margin-bottom: 10px;
+			}
 
 			p {
 				text-align: center;

@@ -5036,7 +5036,8 @@ header {
       color: #ffffff; }
     @media (max-width: 991px) {
       .search-field input[type="text"] {
-        padding: 8px; } }
+        padding: 8px 15px;
+        width: 100% !important; } }
   .search-field input[type="submit"] {
     width: 29px;
     height: 30px;
@@ -5476,6 +5477,9 @@ footer {
   text-align: center;
   margin-bottom: 10px;
   color: #ffffff; }
+  @media (max-width: 767px) {
+    .footer-contact-info h5 {
+      margin-top: 10px; } }
 
 .footer-contact-info p {
   font-size: 16px;
@@ -5489,7 +5493,10 @@ footer {
       color: #e15a29; }
 
 .footer-contact-info {
-  text-align: center; }
+  text-align: center;
+  padding-top: 30px;
+  margin-top: 20px;
+  border-top: 1px solid #ccc; }
 
 .text-left {
   text-align: left; }
@@ -8424,6 +8431,15 @@ a img.aligncenter {
     border: 1px solid #ccc;
     position: relative;
     padding: 40px 30px 25px; }
+    .filter-wrap .filter-box:after {
+      content: '';
+      display: block;
+      float: none;
+      clear: both; }
+    .filter-wrap .filter-box .search-field {
+      width: 100%; }
+    .filter-wrap .filter-box .help-info a {
+      white-space: normal; }
   .filter-wrap .product-accordion.activated ul {
     display: block; }
   .filter-wrap .product-accordion ul {
@@ -8671,6 +8687,10 @@ a img.aligncenter {
     .product-size .custom-select-wrapper .custom-select-display {
       color: #ffffff; }
 
+@media (max-width: 767px) {
+  .pd-desc-wrap {
+    margin-top: 20px; } }
+
 .pd-desc-wrap h4 {
   color: #808285; }
   @media (max-width: 991px) {
@@ -8778,6 +8798,9 @@ a img.aligncenter {
   margin-top: 20px; }
   .pd-seal ul {
     margin: 15px -15px 0; }
+    @media (max-width: 480px) {
+      .pd-seal ul {
+        text-align: center; } }
     .pd-seal ul:after {
       content: '';
       display: block;
@@ -8788,6 +8811,13 @@ a img.aligncenter {
       float: left;
       padding: 0px 15px;
       text-align: center; }
+      @media (max-width: 480px) {
+        .pd-seal ul li {
+          width: 48%;
+          display: inline-block;
+          text-align: center;
+          float: none;
+          margin-bottom: 10px; } }
       .pd-seal ul li p {
         text-align: center; }
 
@@ -9076,15 +9106,16 @@ a img.aligncenter {
   white-space: nowrap;
   padding: 3px 0; }
   .help-info li a {
-    color: #4d4d4d; }
+    color: #4d4d4d;
+    padding-left: 20px;
+    position: relative; }
     .help-info li a:hover {
       color: #b96500; }
 
 .help-info .fa {
-  color: #b96500; }
-
-.help-info i {
-  padding-right: 10px; }
+  color: #b96500;
+  position: absolute;
+  left: 0; }
 
 .search-blog {
   float: left;

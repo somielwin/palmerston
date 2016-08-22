@@ -228,6 +228,8 @@
 
 		a {
 			color: $defaultColor;
+			padding-left: 20px;
+			position: relative;
 
 			&:hover {
 				color: $primaryOrange;
@@ -237,10 +239,8 @@
 
 	.fa {
 		color: $primaryOrange;
-	}
-
-	i {
-		padding-right: 10px;
+		position: absolute;
+		left: 0;
 	}
 }
 

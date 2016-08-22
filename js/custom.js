@@ -145,6 +145,18 @@ $(document).ready(function() {
         }, 400);
     });
 
+    $('.btn-learnmore').click(function(e){
+    	e.preventDefault();
+
+    	var _this = ($(this).attr('href'));
+
+
+
+    	$('html, body').animate({
+	        scrollTop: $(_this).offset().top
+	    }, 600);
+    });
+
     $('.mobile-bottom-close').click(function(){
     	$(this).closest('.top-header').addClass('removed');
     	$('footer').addClass('removed-space');
