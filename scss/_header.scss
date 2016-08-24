@@ -1,13 +1,21 @@
 // ionclude all your related style here in the header, you can leave it empty if the page has no header
 
 header {
-	position: relative;
+	position: absolute;
 	z-index: 3;
-	box-shadow: 0 2px 5px 0 rgba(0,0,0,0.07),0 2px 10px 0 rgba(0,0,0,0.09);
-	background: $coWhite;
+	box-shadow: 0 2px 5px 0 rgba(0,0,0,0.07),0 2px 10px 0 rgba(0,0,0,0.16);
+	background: rgba($coWhite, 0.9);
+	width: 100%;
 	left: 0;
 	@include transition(all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1));
 	z-index: 888;
+	top: inherit;
+
+
+	&.is-fixed {
+		position: fixed;
+		top: 0;
+	}
 
 	&.slide-left {
 		left: -270px;
@@ -63,7 +71,7 @@ header {
 	text-align: center;
 	border-radius: 50%;
 
-	@include breakpoint(mobile) {
+	@include breakpoint(tablet2) {
 		display: block;
 	}
 
@@ -186,7 +194,11 @@ header {
 }
 
 .main-head {
-	padding: 6px 0 0;
+	padding: 0px 0 0;
+
+	.is-fixed & {
+		padding-top: 0;
+	}
 
 	.container {
 		position: relative;
@@ -263,7 +275,7 @@ header {
 
 .search-field {
 	float: right;
-	width: 170px;
+	width: 200px;
 	position: relative;
 
 	@include breakpoint(tablet) {
@@ -331,6 +343,18 @@ header {
 	background: $coWhite;
 	padding: 10px;
 	box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 6px 0 rgba(0, 0, 0, 0.3);
+	z-index: 2;
+	/*@include transition(all 0.3s ease);*/
+
+	.is-fixed & {
+		padding: 0;
+		box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0), 0 3px 6px 0 rgba(0, 0, 0, 0);
+
+	}
+
+	img {
+		width: 210px;
+	}
 
 	@include breakpoint(tablet) {
 		padding: 0;
@@ -339,13 +363,15 @@ header {
 		box-shadow: none;
 
 		img {
-			width: 130px;
+			width: 137px;
 		}
 	}
 }
 
 .menu {
 	float: right;
+	position: relative;
+	z-index: 1;
 
 	@include breakpoint(tablet) {
 		top: 0;
@@ -392,7 +418,7 @@ nav {
 				border-bottom: 1px solid #ccc;
 			}
 
-			&:hover {
+			&:hover, &.active {
 				border-bottom: 2px solid $tertiaryOrange;
 
 				@include breakpoint(tablet) {
@@ -444,9 +470,9 @@ nav {
 						z-index: 99;
 						top: 100%;
 
-						@include breakpoint(tablet) { 
+						/*@include breakpoint(tablet) { 
 							display: none;
-						}
+						}*/
 					}
 				}
 
@@ -497,6 +523,16 @@ nav {
 				@include transition(all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275));
 				z-index: -1;
 
+				@include breakpoint(tablet) {
+					position: relative;
+					opacity: 1;
+					visibility: visible;
+					display: none;
+					top: 0;
+					@include transition(all 0.0s linear);
+					padding: 5px 0;
+				}
+
 				> li {
 					display: block;
 					float: none;
@@ -508,8 +544,12 @@ nav {
 						display: block;
 						background: $primaryOrange;
 
+						@include breakpoint(tablet) {
+							font-size: 14px;
+						}
+
 						&:hover {
-							background: $secondaryBlue;
+							background: $coBlack;
 						}
 					}
 				}

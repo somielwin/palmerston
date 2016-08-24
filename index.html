@@ -43,25 +43,47 @@
 						<div class="clr"></div>						
 							<nav>
 								<ul>
-									<li><a href="#">Home</a></li>
+									<li class="active"><a href="#">Home</a></li>
 									<li class="sub-nav">
 										<a href="#" class="stat new">
 											Bedroom
 											<span><i>New</i></span>
 										</a>
 										<ul>
-											<li><a href="#">Sample</a></li>
-											<li><a href="#">Sample</a></li>
-											<li><a href="#">Sample</a></li>
-											<li><a href="#">Sample</a></li>
+											<li><a href="#">Bed Frames</a></li>							
+											<li><a href="#">Beside Table</a></li>
+											<li><a href="#">Pillows</a></li>
+											<li><a href="#">Tallboys</a></li>
+											<li><a href="#">Wardrobes</a></li>
 										</ul>
 									</li>
-									<li><a href="#">Dining</a></li>
-									<li><a href="#">Living</a></li>
-									<li><a href="#" class="stat hot">
-										Mattresses
-										<span><i>Hot</i></span>
-									</a></li>
+									<li class="sub-nav">
+										<a href="#">Dining</a>
+										<ul>
+											<li><a href="#">Dining Suites</a></li>	
+										</ul>
+									</li>
+									<li class="sub-nav">
+										<a href="#">Living</a>
+										<ul>
+											<li><a href="#">Buffet</a></li>							
+											<li><a href="#">Coffee Table</a></li>
+											<li><a href="#">Lounges &amp; Sofas</a></li>
+											<li><a href="#">TV Units</a></li>
+											<li><a href="#">Wardrobes</a></li>
+										</ul>
+									</li>
+									<li class="sub-nav">
+										<a href="#" class="stat hot">Mattresses <span><i>Hot</i></span></a>
+										<ul>
+											<li><a href="#">Double</a></li>							
+											<li><a href="#">Foam</a></li>
+											<li><a href="#">King</a></li>
+											<li><a href="#">King Single</a></li>
+											<li><a href="#">Queen</a></li>
+											<li><a href="#">Single</a></li>
+										</ul>
+									</li>
 									<li><a href="#">SALE</a></li>
 									<li><a href="#">All Products</a></li>
 									<li><a href="#">Blog</a></li>
@@ -73,26 +95,27 @@
 			</header>
 			<section id="main-wrapper">
 				<div class="banner-slider">
-					<div class="flexslider">
+					<div class="ban-slider-img">
+						<img class="animated hiding" data-animation="fadeIn" src="images/home/slide2.jpg" width="2100" height="1400" alt=""/>
+						<div class="table-wrap">
+							<div class="table-cell">
+								<div class="container">
+									<h1 class="font-cyntho animated hiding" data-animation="fadeInUp" data-delay="400">Where Price is Part <br>of the Comfort</h1>
+								</div>
+								<div class="banner-btn text-center animated hiding" data-animation="fadeInUp">
+									<a href="#matressess" class="btn btn-tertiary btn-rounded btn-learnmore">LEARN MORE</a>
+									<span class="b-arrow"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- <div class="flexslider">
 						<ul class="slides">
 							<li>
-								<div class="ban-slider-img">
-									<img class="animated hiding" data-animation="fadeIn" src="images/home/slide1.jpg" width="1400" height="585" alt=""/>
-									<div class="table-wrap">
-										<div class="table-cell">
-											<div class="container">
-												<h1 class="font-cyntho animated hiding" data-animation="fadeInUp" data-delay="400">Where Price is Part of the Comfort</h1>
-											</div>
-											<div class="banner-btn text-center animated hiding" data-animation="fadeInUp">
-												<a href="#matressess" class="btn btn-tertiary btn-rounded btn-learnmore">LEARN MORE</a>
-												<span class="b-arrow"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
-											</div>
-										</div>
-									</div>
-								</div>
+								
 							</li>
 						</ul>
-					</div>
+					</div> -->
 				</div>
 				<div class="home-carousel-wrap space-pad">
 					<div class="container">
@@ -345,11 +368,13 @@
 									<li class="animated hiding" data-animation="fadeInUp">
 										<div class="mu-content">
 											<div class="mu-li">
-												<div class="mu-month font-nexa-bold"><span>Aug</span></div>
-												<h6 class="mu-num font-cyntho">5</h6>
+												<a href="#">
+													<div class="mu-month font-nexa-bold"><span>Aug</span></div>
+													<h6 class="mu-num font-cyntho">5</h6>
+												</a>
 											</div>
 											<div class="mu-txt">
-												<h6>Title goes here</h6>
+												<h6><a href="#">Title goes here</a></h6>
 												<p>Sed ut perspiciatis unde omnis iste natus error sit</p>
 											</div>
 										</div>
@@ -357,11 +382,13 @@
 									<li class="animated hiding" data-animation="fadeInUp">
 										<div class="mu-content">
 											<div class="mu-li">
-												<div class="mu-month font-nexa-bold"><span>Aug</span></div>
-												<h6 class="mu-num font-cyntho">31</h6>
+												<a href="#">
+													<div class="mu-month font-nexa-bold"><span>Aug</span></div>
+													<h6 class="mu-num font-cyntho">31</h6>
+												</a>
 											</div>
 											<div class="mu-txt">
-												<h6>Title goes here</h6>
+												<h6><a href="#">Title goes here</a></h6>
 												<p>Sed ut perspiciatis unde omnis iste natus error sit</p>
 											</div>
 										</div>
@@ -369,11 +396,14 @@
 									<li class="animated hiding" data-animation="fadeInUp">
 										<div class="mu-content">
 											<div class="mu-li">
-												<div class="mu-month font-nexa-bold"><span>Jun</span></div>
-												<h6 class="mu-num font-cyntho">10</h6>
+												<a href="#">
+													<div class="mu-month font-nexa-bold"><span>Jun</span></div>
+													<h6 class="mu-num font-cyntho">10</h6>
+												</a>
 											</div>
+
 											<div class="mu-txt">
-												<h6>Title goes here</h6>
+												<h6><a href="#">Title goes here</a></h6>
 												<p>Sed ut perspiciatis unde omnis iste natus error sit</p>
 											</div>
 										</div>
@@ -491,12 +521,12 @@
 						<div class="row">
 							<div class="col-sm-4">
 								<h5 class="des-border">Store Address</h5>
-								<p>Shop 8, 5 McKenzie Place <br>Yarrawonga Village, Yarrawonga <br>NT, 0830</p>
+								<p>Shop 8, 5 McKenzie Place <br>Yarrawonga Village <br> Yarrawonga. NT. 0830</p>
 							</div>
 							<div class="col-sm-4">
 								<h5 class="des-border">Contact Details</h5>
-								<p>Tel: <a href="#">08 8983 4477</a></p>
-								<p>Fax: 08 8983 4488 </p>
+								<p>Tel: <a href="#">+61 8 8983 4477</a></p>
+								<p>Fax: +61 8 8983 4488 </p>
 								<p>Email: <a href="#">email us today!</a></p>
 							</div>
 							<div class="col-sm-4">

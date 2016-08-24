@@ -38,14 +38,17 @@ body {
 .clr { display: block; float:none; clear:both; }
 
 #main-wrapper {
+	padding-top: 93px;
+
 	@include breakpoint(tablet) {
 		padding-top: 60px;
+
 	}
 
 	&.spacing-top {
 		
 		.breacrumb-wrap {
-			padding: 40px 0 12px 0;
+			padding: 34px 0 12px 0;
 
 			@include breakpoint(tablet) {
 				padding-top: 12px;
@@ -85,7 +88,7 @@ body {
 
 .btn {
 	display: inline-block;
-	padding: 6px 25px;
+	padding: 8px 25px 6px;
 	font-size: 16px;
 	vertical-align: middle;
 	-ms-touch-action: manipulation;
@@ -183,6 +186,10 @@ body {
 
 .sec-head {
 	padding: 0px 30px;
+
+	@include breakpoint(tablet2) {
+		padding: 0px 5px;
+	}
 
 	p {
 		margin-top: 30px;
@@ -317,6 +324,18 @@ body {
 .breacrumb-wrap {
 	padding: 12px 0;
 	background: $secondaryBlue;
+
+	&.no-bg {
+		background: none;
+
+		p {
+			color: $coGrey;
+
+			a {
+				color: $coGrey;
+			}
+		}
+	}
 }
 
 .breadcrumb {

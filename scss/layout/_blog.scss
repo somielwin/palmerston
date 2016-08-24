@@ -230,6 +230,10 @@
 			color: $defaultColor;
 			padding-left: 20px;
 			position: relative;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			overflow: hidden;
+			display: block;
 
 			&:hover {
 				color: $primaryOrange;
@@ -373,8 +377,10 @@
 
 	.sm-btn {
 		background-color: $primaryOrange;
-		padding: 10px 15px;
 		display: inline-block;
+		line-height: 40px;
+	    width: 40px;
+	    text-align: center;
 	}
 
 	a {
