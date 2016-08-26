@@ -81,16 +81,19 @@ $(document).ready(function() {
 	
 
 	// Footer Mobile Accordion
-	$('.product-accordion h6').click(function(){
+	$('.product-accordion h6 a').click(function(e){
+
 		
 		
 		if($(this).hasClass('active')) {
-			$('.product-accordion h6').removeClass('active').next('ul').stop(true, false).slideUp();
+			return true;
 		} else {
 			$('.product-accordion activated').stop(true, false).slideUp();
-			$('.product-accordion h6').removeClass('active');
+			$('.product-accordion h6 a').removeClass('active');
 			$('.product-accordion ul').stop(true, false).slideUp();
-			$(this).addClass('active').next('ul').stop(true, false).slideDown();
+			$(this).addClass('active').closest('.product-accordion').find('ul').stop(true, false).slideDown();
+
+			e.preventDefault();
 		}
 	});
 	
@@ -180,7 +183,7 @@ $(document).ready(function() {
     $('.pd-desc-wrap .btn-enquire').click(function(e){
     	e.preventDefault();
     	$(this).addClass('active');
-    	$('.product-enquiry').slideDown(300);
+    	$('.product-enquiry').stop(true, false).slideDown(300);
 
     	setTimeout(function(){
     		var offset = $('.product-enquiry').offset().top + $('.product-enquiry').outerHeight(false) - $(window).height();

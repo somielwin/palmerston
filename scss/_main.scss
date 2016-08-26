@@ -443,10 +443,16 @@ body {
 				color: $coWhite;
 				text-align: center;
 				line-height: 30px;
+
+
+				&.current, &.pagi-active {
+					width: 30px;
+					color: $coWhite;
+				}
 			}
 
-			a {
-				&.pagi-active, &:hover {
+			a, span {
+				&.pagi-active, &:hover, &.current {
 					background: $primaryOrange;
 				}
 			}

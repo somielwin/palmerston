@@ -212,6 +212,17 @@
 			font-size: 16px;
 			margin-bottom: 5px;
 			cursor: pointer;
+
+			a {
+				color: $coGrey;
+			}
+		}
+
+		.no-children-btn {
+			font-size: 16px;
+			margin-bottom: 5px;
+			font-family: $fontNexaBold; 
+			color: $coGrey;
 		}
 	}
 
@@ -287,7 +298,7 @@
 	margin-top: 10px;
 
 	.product-listings-wrap {
-		max-width: 75%;
+		width: 75%;
 		float: right;
 		padding-left: 15px;
 
@@ -295,7 +306,7 @@
 			width: 100%;
 			float: none;
 			clear: both;
-			max-width: 100%;
+			width: 100%;
 			padding-left: 0;
 		}
 
@@ -440,6 +451,7 @@
 	.old-price {
 		display: inline-block;
 		font-size: 28px;
+		margin-right: 10px;
 		position: relative;
 
 		@include breakpoint(mobile) {
@@ -460,7 +472,6 @@
 	.new-price {
 		display: inline-block;
 		font-size: 28px;
-		margin: 0px 10px;
 		color: $secondaryBlue;
 
 		@include breakpoint(mobile) {
@@ -558,7 +569,7 @@
 }
 
 .product-size {
-	margin-bottom: 10px;
+	margin-bottom: 20px;
 
 	.custom-select-wrapper {
 		background: $secondaryBlue;
@@ -911,4 +922,40 @@
 	display: block;
 	float: left;
 	margin-top: 10px;
+}
+
+.firm-level {
+	width: 60px;
+	height: 60px;
+	border: 3px solid #ccc;
+	border-radius: 50%;
+
+	img {
+		width: 100%;
+		height: auto;
+	}
+}
+
+.product-categ-wrap {
+
+	.owl-carousel {
+		padding-top: 30px;
+
+		.btn.btn-blue {
+			opacity: 1;
+			@include transform(scale(1));
+			@include transition(all 0.3s ease);
+
+			@include breakpoint(tablet) {
+				opacity: 1;
+				@include transform(scale(1));
+			}
+		}
+
+		.owl-controls .owl-prev, .owl-controls .owl-next {
+			width: 50px;
+			height: 50px;
+			background-size: 50px;
+		}
+	}
 }
