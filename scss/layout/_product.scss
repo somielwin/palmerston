@@ -49,6 +49,10 @@
 	.h-product-categ {
 		margin-top: 40px;
 
+		@include breakpoint(mobile) {
+			margin-top: 15px;
+		}
+
 		ul {
 			margin: 0px -10px;
 
@@ -160,7 +164,7 @@
 
 		.search-field {
 			width: 100%;
-
+			margin-top: 0;
 		}
 
 		/*.help-info {
@@ -341,9 +345,23 @@
 		width: 25%;
 		
 		@include breakpoint(tablet2) {
-			width: 100%;
+			width: 270px;
 			float: none;
 			margin-bottom: 15px;
+			position: fixed;
+			left: -270px;
+			top: 0;
+			opacity: 1 !important;
+			background: #fff;
+			padding: 10px 10px;
+			z-index: 99;
+			height: 100%;
+			overflow: auto;
+			@include transition(all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1));
+
+			&.slide-right {
+				left: 0;
+			}
 		}
 
 		.filter-box {
@@ -351,6 +369,11 @@
 			padding: 15px 10px;
 			color: $coGrey;
 			margin-bottom: 15px;
+
+			@include breakpoint(tablet2) {
+				margin-bottom: 10px;
+				padding: 10px;
+			}
 		}
 
 		.btn.btn-tertiary {
@@ -367,6 +390,7 @@
 				text-align: center;
 				display: block;
 				margin-bottom: 15px;
+				font-family: "NexaBold","Arial","Helvetica","sans-serif";
 			}
 		}
 	}
@@ -682,6 +706,15 @@
 		padding: 0px 15px;
 	}
 
+	form {
+		padding: 20px;
+		position: relative;
+
+		@include breakpoint(tablet2) {
+			padding: 0;
+		}
+	}
+
 	.inquire-title {
 		color: $coGrey;
 		padding-top: 0;
@@ -956,6 +989,49 @@
 			width: 50px;
 			height: 50px;
 			background-size: 50px;
+		}
+	}
+}
+
+.mobile-filter-btn {
+	display: none;
+	width: 5px;
+	background: $primaryLightOrange;
+	height: 100%;
+	position: fixed;
+	z-index: 1002;
+	left: 0;
+	@include transition(all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1));
+
+	@include breakpoint(tablet2) {
+		display: block;
+	}
+
+	&.slide-left {
+		left: -270px;
+	}
+
+	&.slide-right {
+		left: 270px;
+	}
+
+	a {
+		font-size: 20px;
+		background: rgba($primaryLightOrange, 0.9);
+		color: $coWhite;
+		position: fixed;
+		padding: 11px 8px 7px 5px;
+		text-align: center;
+		top: 250px;
+		left: 5px;
+		@include transition(all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1));
+
+		&.slide-left {
+			left: -275px;
+		}
+
+		&.slide-right {
+			left: 275px;
 		}
 	}
 }

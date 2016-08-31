@@ -12,7 +12,15 @@
 	    left: 0;
 	}
 
+	header.slide-right {
+	    left: 0;
+	}
+
 	#main-container.slide-left {
+	    left: 0px;
+	}
+
+	#main-container.slide-right {
 	    left: 0px;
 	}
 }
@@ -46,6 +54,6 @@
 
 
 	.hidden-mobile {
-		display: none;
+		display: none !important;
 	}
 }

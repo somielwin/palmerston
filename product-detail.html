@@ -191,10 +191,20 @@
 						<a href="#" class="p-enquiry-backbtn"><i class="fa fa-angle-left" aria-hidden="true"></i> <span>Back </span></a>
 						<div class="p-enquiry-wrap inquire-form">
 							<h5 class="inquire-title font-cyntho">Inquire About This Product</h5>
-							<form method="post" action="">
-								<div class="input-wrap">
+							<form class="overlay" method="post" action="">
+								<div class="loading-spinner-wrapper" id="app-loader">
+							        <span class="loading-spinner">
+							          <i class="one"></i>
+							          <i class="two"></i>
+							          <i class="three"></i>
+							        </span>
+							    </div>
+								<div class="input-wrap error">
 						            <input type="text" id="name-inquire" name="" value="" required="required" onchange="this.setAttribute('value', this.value);"></input>
 						            <label for="name-inquire">Your Name</label>
+						            <div class="required-msg">
+						            	<p>This field is required</p>
+						            </div>
 						        </div>
 						        <div class="input-wrap">
 						            <input type="email" id="email-inquire" name="" value="" placeholder="juan@gmail.com" required="required" onchange="this.setAttribute('value', this.value);"></input>

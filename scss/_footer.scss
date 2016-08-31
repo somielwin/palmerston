@@ -30,6 +30,10 @@ footer {
 
 	img {
 		max-width: 100%;
+
+		@include breakpoint(mobile) {
+			max-width: 60%;
+		}
 	}
 }
 

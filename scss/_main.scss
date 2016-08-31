@@ -4,6 +4,12 @@ html, body { height:100%; min-height:100%; }
 .ease,a,input[type="submit"],button { @include transition(all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1)); }
 .loader { position:relative; overflow:hidden; background:#fff url('../images/page_template/loading.gif') no-repeat center; }
 .auto { max-width:$maxWidth; margin: 0 auto; }
+
+#ss-container {
+	position: relative;
+	overflow: hidden;
+}
+
 #main-container {
 	position: relative;
 	z-index: 3;
@@ -12,6 +18,10 @@ html, body { height:100%; min-height:100%; }
 
 	&.slide-left {
 		left: -270px;
+	}
+
+	&.slide-right {
+		left: 270px;
 	}
 }
 
@@ -288,6 +298,13 @@ body {
 	    font-family: $fontNexaBold;
 
 	}
+
+	&.error {
+
+		input[type="email"], input[type="text"], input[type="tel"], textarea {
+			border: 1px solid #bd0202;
+		}
+	}
 }
 
 .price-text {
@@ -358,6 +375,10 @@ body {
 	position: relative;
 	overflow: hidden;
 	z-index: 2;
+
+	@include breakpoint(tablet2) {
+		display: none;
+	}
 
 	&:before {
 		content:'';
@@ -570,6 +591,157 @@ body {
 
 .promo-amount {
 	font-size: 20px !important;
+}
+
+.innerpage-wrap {
+	padding-top: 60px;
+	padding-bottom: 30px;
+
+	h1 {
+		font-size: 42px;
+		line-height: 50px;
+		margin-bottom: 20px;
+	}
+}
+
+.wrap-404 {
+
+	p {
+		font-size: 18px;
+
+		br {
+			@include breakpoint(tablet2) {
+				display: none;
+			}
+		}
+	}
+
+	.btn {
+		margin: 30px 0;
+	}
+}
+
+.required-msg {
+	font-size: 12px;
+	color: $coRed;
+	font-style: italic;
+	position: absolute;
+	right: 10px;
+	bottom: 4px;
+	visibility: hidden;
+	opacity: 0;
+	@include transition(all 0.3s ease);
+
+	.error & {
+		visibility: visible;
+		opacity: 1;
+	}
+}
+
+.overlay {
+
+	&:before {
+		content: '';
+		display: block;
+		width: 100%;
+		position: absolute;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background: rgba(#e6e7e8, 0.8);
+		z-index: 99;
+	}
+}
+
+.loading-spinner-wrapper {
+	position: absolute;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    z-index: 99;
+    top: 50%;
+    margin-top: -6px;
+    opacity: 0;
+    @include transition(all, 0.3s, ease);
+
+    .overlay & {
+    	opacity: 1;
+    }
+}
+
+
+.loading-spinner {
+    position: relative;
+    vertical-align: middle;
+    width: 50px;
+    height: 12px;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+}
+
+.loading-spinner i {
+    position: absolute;
+    top: 0;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: $coBlue;
+    -webkit-animation: pulse 1s infinite ease-in-out;
+    -moz-animation: pulse 1s infinite ease-in-out;
+    animation: pulse 1s infinite ease-in-out;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    animation-fill-mode: both
+}
+.loading-spinner i.one {
+    left: 0;
+    -webkit-animation-delay: -.32s;
+    -moz-animation-delay: -.32s;
+    animation-delay: -.32s
+}
+.loading-spinner i.two {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    -webkit-animation-delay: -.16s;
+    -moz-animation-delay: -.16s;
+    animation-delay: -.16s
+}
+.loading-spinner i.three {
+    right: 0;
+}
+.loading-spinner i {
+    background: $tertiaryOrange;
+}
+
+
+@-webkit-keyframes pulse {
+    0%, 100%, 80% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 1;
+    }
+}
+@-moz-keyframes pulse {
+    0%, 100%, 80% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 1;
+    }
+}
+@keyframes pulse {
+    0%, 100%, 80% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 1;
+    }
 }
 
 
