@@ -530,7 +530,7 @@ nav {
 				}
 			}
 
-			ul {
+			> ul {
 				position: absolute;
 				top: 105%;
 				left: 0;
@@ -541,6 +541,36 @@ nav {
 				visibility: hidden;
 				@include transition(all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275));
 				z-index: -1;
+
+
+				ul {
+					position: absolute;
+					opacity: 0;
+					visibility: hidden;
+					@include transition(all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275));
+					z-index: -1;
+					top: 0;
+					left: 100%;
+					min-width: 180px;
+
+					a {
+						background: darken($primaryOrange, 5%) !important;
+
+						&:hover {
+							background: #000 !important;
+						}
+					}
+
+					@include breakpoint(tablet) {
+						display: block !important;
+						opacity: 1;
+						visibility: visible;
+						padding-left: 10px;
+					    left: 0;
+					    position: relative;
+					    background: darken($primaryOrange, 5%) !important;
+					}
+				}
 
 				@include breakpoint(tablet) {
 					position: relative;
@@ -555,11 +585,12 @@ nav {
 				> li {
 					display: block;
 					float: none;
+					position: relative;
 
 					a {
 						display: block;
 						color: $coWhite;
-						padding: 5px 15px;
+						padding: 7px 15px;
 						display: block;
 						background: $primaryOrange;
 
@@ -569,6 +600,19 @@ nav {
 
 						&:hover {
 							background: $coBlack;
+						}
+					}
+
+					&:hover {
+						
+
+						> a {
+							background: $coBlack;
+						}
+
+						ul {
+							opacity: 1;
+							visibility: visible;
 						}
 					}
 				}

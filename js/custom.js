@@ -85,8 +85,6 @@ $(document).ready(function() {
 	// Footer Mobile Accordion
 	$('.product-accordion h6 a').click(function(e){
 
-		
-		
 		if($(this).hasClass('active')) {
 			return true;
 		} else {
@@ -313,7 +311,7 @@ $(document).ready(function() {
     if($('.header-hamburger').width() < 992) {
     	$('.sub-nav').click(function(e){
     		e.preventDefault();
-    		$(this).find('ul').stop(true, false).slideToggle();
+    		$(this).find('>ul').stop(true, false).slideToggle();
 	    });
     }
     

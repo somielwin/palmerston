@@ -608,6 +608,16 @@
 
 		}
 	}
+
+	&.no-image {
+		
+		.hn-info {
+
+			&:before {
+				display: none;
+			}
+		}
+	}
 }
 
 .hpc-wrap {
