@@ -36,9 +36,9 @@ function resize() {
 	});
 
 	// for equalizer
-	$('.classname').css({minHeight: 0});
-	var ClassName = get_biggest($('.classname'));
-	$('.classname').css({minHeight: ClassName});
+	$('.pcarousel-item').css({minHeight: 0});
+	var productList = get_biggest($('.pcarousel-item'));
+	$('.pcarousel-item').css({minHeight: productList});
 
 }
 

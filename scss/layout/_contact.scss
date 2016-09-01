@@ -335,3 +335,22 @@
 
 }
 
+#map {
+	position: relative;
+	overflow: hidden;
+
+	&:before {
+		content:'';
+		display: block;
+		float: none;
+		width: 100%;
+		position: absolute;
+		height: 100%;
+		left: 0px;
+		top: 0px;
+		margin-top: 50px;
+		margin-left: 50px;
+		background: transparent;
+	}
+}
+

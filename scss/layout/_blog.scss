@@ -473,6 +473,17 @@
 	}*/
 }
 
+.blog-search {
+
+	&.search-field {
+		display: block;
+		float: none;
+		clear: both;
+		width: 100%;
+		margin-bottom: 15px;
+	}
+}
+
 @media only screen and (min-width: 768px) {
 	.recent-post, .category-list {
 		ul {
