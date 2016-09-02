@@ -283,6 +283,8 @@
 	height: auto;
 	position: relative;
 
+
+
 	@include breakpoint(mobile) {
 		padding: 0px 50px;
 	}
@@ -292,6 +294,11 @@
 		height: auto;
 		display: block;
 	}
+}
+
+.pc-img[data-status]:after { 
+	content: ""attr(data-status)""; 
+		
 }
 
 .pc-info {

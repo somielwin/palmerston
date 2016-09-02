@@ -114,7 +114,7 @@ $(document).ready(function() {
 	    pullDrag: false,
 	    responsive:{
 	        0:{
-	            items:1,
+	            items:2,
 	            nav:true
 	        },
 	        481:{
