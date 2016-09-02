@@ -484,6 +484,16 @@
 	}
 }
 
+/*** Mailchimp Account ***/
+
+.mce_inline_error + div {
+	padding: 5px 8px !important;
+	text-align: left;
+    font-size: 12px;
+    background-color: transparent !important;
+}
+
+
 @media only screen and (min-width: 768px) {
 	.recent-post, .category-list {
 		ul {

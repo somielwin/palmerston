@@ -296,10 +296,6 @@
 	}
 }
 
-.pc-img[data-status]:after { 
-	content: ""attr(data-status)""; 
-		
-}
 
 .pc-info {
 	text-align: center;
@@ -902,9 +898,40 @@
 
 	.btn {
 		border: none;
+		margin-top: 10px;
 	}
 
 	
+}
+
+#mce-EMAIL {
+	&::-webkit-input-placeholder { 
+		font-size: 12px;
+	}
+	&::-moz-placeholder {
+		font-size: 12px;
+	}
+	&:-ms-input-placeholder { 
+		font-size: 12px;
+	}
+	&:-moz-placeholder { 
+		font-size: 12px;
+	}
+}
+
+#mce-success-response, #mce-error-response {
+	font-size: 12px;
+	text-align: left;
+	color: $coWhite;
+	margin-bottom: 5px;
+}
+
+.mc-field-group.input-wrap {
+	margin-bottom: 5px;
+
+	input[type="email"] {
+		font-size: 14px;
+	}
 }
 
 .mu-title{
