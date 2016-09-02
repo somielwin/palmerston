@@ -744,6 +744,115 @@ body {
     }
 }
 
+.popup-wrap {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	visibility: hidden;
+	overflow: hidden;
+	opacity: 0;
+	@include transition(all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1));
+	z-index: 1;
+
+	&.active {
+		z-index: 1000;
+		opacity: 1;
+		visibility: visible;
+
+		.popup-content {
+			@include transform(translateY(0));
+			opacity: 1;
+		}
+
+		&:after {
+			opacity: 1;
+		}
+		
+	}
+
+	.close-btn {
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: block;
+		height: 100%;
+		width: 100%;
+		z-index: 3;
+	}
+
+	&:after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 200%;
+		width: 100%;
+		z-index: 2;
+		background: rgba(0, 0, 0, 0.80);
+		@include transition(all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1));
+		opacity: 0;
+	}
+}
+
+.popup-content {
+	width: 30%;
+	max-width: 420px;
+	min-width: 420px;
+	background: $coWhite;
+	position: absolute;
+	top: 5%;
+	left: 50%;
+	overflow-y: auto;
+	overflow-x: hidden;
+	margin-left: -210px;
+	padding: 40px 9px 0px;
+	opacity: 0;
+	z-index: 9;
+	@include transform(translateY(20%));
+	@include transition(all 0.4s 0.3s cubic-bezier(0.215, 0.61, 0.355, 1));
+
+	@include breakpoint(tablet2) {
+		width: 100%;
+		max-width: 100%;
+		top: 0;
+		left: 0;
+		margin-left: 0;
+		height: 100%;
+		max-height: 100%;
+		min-width: 1px;
+		overflow-y: auto;
+		overflow-x: hidden;
+		padding-top: 0;
+	}
+}
+
+.thankyou-page {
+	color: #333;
+	font-size: 18px;
+	padding: 10% 0;
+	text-align: center;
+
+	h4 {
+		margin-top: 10px;
+		margin-bottom: 20px;
+		color: $coGrey;
+		margin-bottom: 15px;
+	}
+}
+
+.close-text {
+	font-size: 20px;
+	color: $tertiaryOrange;
+	position: absolute;
+	top: 10px;
+	right: 20px;
+
+	@include breakpoint(tablet2) {
+		color: $coWhite;
+		top: 6px;
+	}
+}
+
 
 img.alignright {float:right; margin:0 0 1em 1em}
 img.alignleft {float:left; margin:0 1em 1em 0}

@@ -327,6 +327,16 @@ $(document).ready(function() {
 		$('input[name="price_fm"]').val( newValFirst);
 		$('input[name="price_to"]').val( (newValSecond > 10000000) ? 10050000 : newValSecond );
 	}
+
+	$('.close-text').click(function(e){
+		e.preventDefault();
+		$('.popup-wrap').removeClass('active');
+	});
+
+	$('.btn-enquiry-product').click(function(e){
+		e.preventDefault();
+		$('.popup-wrap').addClass('active');
+	});
 });
 
 $(window).load(function() {
