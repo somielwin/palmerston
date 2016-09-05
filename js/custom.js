@@ -36,6 +36,11 @@ function resize() {
 	});
 
 	// for equalizer
+	$('.pc-img').css({minHeight: 0});
+	var productList = get_biggest($('.pc-img'));
+	$('.pc-img').css({minHeight: productList});
+
+
 	$('.pcarousel-item').css({minHeight: 0});
 	var productList = get_biggest($('.pcarousel-item'));
 	$('.pcarousel-item').css({minHeight: productList});
@@ -128,12 +133,10 @@ $(document).ready(function() {
 	        810:{
 	            items:4,
 	            nav:true,
-	            loop:false
 	        },
 	        992:{
 	            items:4,
 	            nav:true,
-	            loop:false
 	        }
 	    }
 	});

@@ -4,6 +4,10 @@
 	ul.product-listings {
 		margin: 0px -10px;
 
+		@include breakpoint(mobile) {
+			margin: 0px -5px;
+		}
+
 		&:after {
 			content: '';
 			display: block;
@@ -21,11 +25,22 @@
 			}
 
 			@include breakpoint(tablet2) {
-				width: 50%;
+
+				&:nth-child(3n+1) {
+					clear: left;
+				}
+			}
+
+			@include breakpoint(phablet) {
+
+				&:nth-child(3n+1) {
+					clear: none;
+				}
 			}
 
 			@include breakpoint(mobile) {
-				width: 100%;
+				xwidth: 100%;
+				padding: 8px 5px 8px;
 			}
 		}
 	}
@@ -331,14 +346,26 @@
 
 				@include breakpoint(tablet2) {
 					width: 33.33%;
+
+					&:nth-child(3n + 1) {
+						clear: left;
+					}
 				}
 
 				@include breakpoint(phablet) {
 					width: 50%;
+
+					&:nth-child(3n+1) {
+						clear: none;
+					}
+
+					&:nth-child(2n + 1) {
+						clear: left;
+					}
 				}
 
 				@include breakpoint(mobile) {
-					width: 100%;
+					xwidth: 100%;
 				}
 			}
 		}

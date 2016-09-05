@@ -277,17 +277,21 @@
 	}
 }
 
+.owl-carousel {
+
+	.pc-img {
+		
+	}
+}
 
 .pc-img {
 	width: 100%;
 	height: auto;
 	position: relative;
 
-
-
-	@include breakpoint(mobile) {
+	/*@include breakpoint(mobile) {
 		padding: 0px 50px;
-	}
+	}*/
 
 	img {
 		width: 100%;
@@ -307,6 +311,10 @@
 
 	p {
 		padding-bottom: 5px;
+
+		@include breakpoint(mobile) {
+			font-size: 14px;
+		}
 	}
 
 	.btn {

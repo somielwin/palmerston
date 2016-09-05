@@ -350,6 +350,10 @@ body {
 
 			a {
 				color: $coGrey;
+
+				&:hover {
+					color: $secondaryBlue;
+				}
 			}
 		}
 	}

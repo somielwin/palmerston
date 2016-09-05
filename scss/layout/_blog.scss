@@ -52,6 +52,12 @@
 	padding-top: 20px;
 	padding-bottom: 20px;
 
+	&.no-image {
+		.blog-info {
+			padding-left: 0;
+		}
+	}
+
 	&:after {
 		content:'';
 		display: block;
@@ -155,6 +161,10 @@
 
 .blog-info {
 	padding-left: 270px;
+
+	&.no-image {
+		padding-left: 0;
+	}
 
 	@include breakpoint(tablet) {
 		padding-left: 0;
