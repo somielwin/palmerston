@@ -116,6 +116,7 @@
 	.btn.btn-tertiary {
 		padding: 12px 25px;
 		border-radius: 25px;
+		text-transform: uppercase;
 	}
 }
 
@@ -288,6 +289,9 @@
 	width: 100%;
 	height: auto;
 	position: relative;
+	background: $coWhite;
+	/*background: url('../images/page_template/placeholder.jpg') no-repeat center center;
+	background-size: contain;*/
 
 	/*@include breakpoint(mobile) {
 		padding: 0px 50px;

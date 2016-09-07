@@ -1,3 +1,5 @@
+var $ = jQuery;
+
 //get all elements with class and get the biggest box
 function get_biggest(elements){
 	var biggest_height = 0;
@@ -51,10 +53,17 @@ $(window).resize(function() {
 	resize();
 	doCoverImage();
 
-	if($('.header-hamburger').width() < 992) {
-    	$('.sub-nav').click(function(e){
-    		e.preventDefault();
-    		$(this).find('ul').stop(true, false).slideToggle();
+	if($(window).width() < 992) {
+    	$('.sub-nav>a').click(function(e){
+
+    		if($(this).hasClass('active')) {
+    			return true;
+    		} else {
+    			e.preventDefault();
+    			$(this).addClass('active');
+    			$(this).closest('.sub-nav').find('ul').stop(true, false).slideDown();
+    		}
+    		
 	    });
     }
 });
@@ -66,20 +75,24 @@ $(document).ready(function() {
 		$('html').addClass('bp-touch');
 	} 
 
-	$('.animated').appear(function() {
-        var element = $(this);
-        var animation = element.data('animation');
-        var animationDelay = element.data('delay');
-        if(animationDelay) {
-          setTimeout(function(){
-              element.addClass( animation + " visible" );
-              element.removeClass('hiding');
-          }, animationDelay);
-        } else {
-          element.addClass( animation + " visible" );
-          element.removeClass('hiding');
-        }               
-    }, {accY: -90});
+	if($(window).width() < 992) {
+		$('.hiding').css({'opacity' : 1});
+	} else {
+		$('.animated').appear(function() {
+	        var element = $(this);
+	        var animation = element.data('animation');
+	        var animationDelay = element.data('delay');
+	        if(animationDelay) {
+	          setTimeout(function(){
+	              element.addClass( animation + " visible" );
+	              element.removeClass('hiding');
+	          }, animationDelay);
+	        } else {
+	          element.addClass( animation + " visible" );
+	          element.removeClass('hiding');
+	        }               
+	    }, {accY: -90});
+	}
 
 	resize();
 	doCoverImage();
@@ -116,6 +129,7 @@ $(document).ready(function() {
 	    margin:15,
 	    responsiveClass:true,
 	    navigationText: false,
+	    lazyLoad: true,
 	    pullDrag: false,
 	    responsive:{
 	        0:{
@@ -247,10 +261,15 @@ $(document).ready(function() {
     	e.preventDefault();
 
     	var _this = ($(this).attr('href'));
+    	
 
-    	$('html, body').animate({
-	        scrollTop: $(_this).offset().top
-	    }, 600);
+    	if ($(_this).length > 0) {
+    		var _thisOffset = $(_this).offset().top - $('header').outerHeight(false);
+    		$('html, body').animate({
+		        scrollTop: _thisOffset
+		    }, 600);
+    	}
+    	
     });
 
     $('.mobile-bottom-close').click(function(){
@@ -311,10 +330,17 @@ $(document).ready(function() {
 		})
     }
 
-    if($('.header-hamburger').width() < 992) {
-    	$('.sub-nav').click(function(e){
-    		e.preventDefault();
-    		$(this).find('>ul').stop(true, false).slideToggle();
+    if($(window).width() < 992) {
+    	$('.sub-nav>a').click(function(e){
+
+    		if($(this).hasClass('active')) {
+    			return true;
+    		} else {
+    			e.preventDefault();
+    			$(this).addClass('active');
+    			$(this).closest('.sub-nav').find('ul').stop(true, false).slideDown();
+    		}
+    		
 	    });
     }
     

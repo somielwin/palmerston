@@ -263,6 +263,11 @@ body {
 		margin-bottom: 15px;
 	}
 
+	@include breakpoint(mobile) {
+		margin-bottom: 20px;
+		font-size: 12px;
+	}
+
 	input[type="email"], input[type="text"], input[type="tel"], textarea {
 		width: 100%;
 		border: none;
@@ -296,6 +301,10 @@ body {
 	    font-size: 12px;
 	    position: absolute;
 	    font-family: $fontNexaBold;
+
+	    .product-enquiry & {
+	    	color: $coGrey;
+	    }
 
 	}
 
@@ -800,8 +809,8 @@ body {
 
 .popup-content {
 	width: 30%;
-	max-width: 420px;
-	min-width: 420px;
+	max-width: 520px;
+	min-width: 520px;
 	background: $coWhite;
 	position: absolute;
 	top: 5%;
@@ -809,11 +818,17 @@ body {
 	overflow-y: auto;
 	overflow-x: hidden;
 	margin-left: -210px;
-	padding: 40px 9px 0px;
+	padding: 0px 9px 0px;
 	opacity: 0;
 	z-index: 9;
 	@include transform(translateY(20%));
 	@include transition(all 0.4s 0.3s cubic-bezier(0.215, 0.61, 0.355, 1));
+
+	.close-text {
+		color: $tertiaryOrange;
+		bottom: inherit;
+		top: 15px;
+	}
 
 	@include breakpoint(tablet2) {
 		width: 100%;
@@ -841,6 +856,24 @@ body {
 		margin-bottom: 20px;
 		color: $coGrey;
 		margin-bottom: 15px;
+		font-size: 26px;
+		padding-bottom: 5px;
+		padding-left: 20px;
+    	padding-right: 20px;
+    	position: relative;
+
+		&:before {
+			content:'';
+			width: 100px;	
+			left: 50%;
+			bottom: -5px;
+			margin-left: -50px;
+			height: 2px;
+			background: $primaryOrange;
+			position: absolute;
+
+
+		}
 	}
 }
 
@@ -848,8 +881,8 @@ body {
 	font-size: 20px;
 	color: $tertiaryOrange;
 	position: absolute;
-	top: 10px;
-	right: 20px;
+	top: 15px;
+	right: 15px;
 
 	@include breakpoint(tablet2) {
 		color: $coWhite;
@@ -857,10 +890,24 @@ body {
 	}
 }
 
+#errorNotif {
+	position: absolute;
+	bottom: 2px;
+	font-size: 12px;
+	right: 2px;
+}
 
-img.alignright {float:right; margin:0 0 1em 1em}
-img.alignleft {float:left; margin:0 1em 1em 0}
-img.aligncenter {display: block; margin-left: auto; margin-right: auto}
-a img.alignright {float:right; margin:0 0 1em 1em}
-a img.alignleft {float:left; margin:0 1em 1em 0}
-a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
+.blog-content {
+
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+}
+
+img.alignright {float:right; margin:0 0 1em 1em;}
+img.alignleft {float:left; margin:0 1em 1em 0;}
+img.aligncenter {display: block; margin-left: auto; margin-right: auto;}
+a img.alignright {float:right; margin:0 0 1em 1em; }
+a img.alignleft {float:left; margin:0 1em 1em 0; }
+a img.aligncenter {display: block; margin-left: auto; margin-right: auto; }

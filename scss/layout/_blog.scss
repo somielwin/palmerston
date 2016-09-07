@@ -56,6 +56,10 @@
 		.blog-info {
 			padding-left: 0;
 		}
+
+		.pic-wrap {
+			display: none;
+		}
 	}
 
 	&:after {
@@ -76,9 +80,9 @@
 }
 
 .blog-pic {
-	background-color: grey;
+	xbackground-color: grey;
     width: 250px;
-    height: 190px;
+    xheight: 190px;
     float: left;
     margin-right:10px;
     position: relative;
