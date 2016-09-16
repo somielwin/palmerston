@@ -71,9 +71,9 @@ $(window).resize(function() {
 $(document).ready(function() {
 	var isBusy = false
 
-	if (Modernizr.touch) {
-		$('html').addClass('bp-touch');
-	} 
+	// if (Modernizr.touch) {
+	// 	$('html').addClass('bp-touch');
+	// } 
 
 	if($(window).width() < 992) {
 		$('.hiding').css({'opacity' : 1});
@@ -311,7 +311,7 @@ $(document).ready(function() {
     if( $('.noUiSlider').length > 0) {
 
     	$('.noUiSlider').noUiSlider({
-			start: [ 0, 100000 ],
+			start: [ 0, 4000 ],
 			margin: 20,
 			connect: true,
 			step: 100,
@@ -321,7 +321,7 @@ $(document).ready(function() {
 			}),
 			range: {
 				'min': 0,
-				'max': 100000
+				'max': 4000
 			}
 		}).on({
 			slide: function() {
@@ -350,11 +350,11 @@ $(document).ready(function() {
 		var newValFirst = newVal[0].replace(/,/g, "");
 		var newValSecond = newVal[1].replace(/,/g, "");
 
-		$('.ps-min-price').html(( (newValFirst <= 10000000) ?  ('$ ' +newVal[0])  : '10M+' ));
+		$('.ps-min-price').html(( (newValFirst <= 4000) ?  ('$ ' +newVal[0])  : '10M+' ));
 		//$('.noUi-handle-lower').html('<span>' + 'P' + newVal[0] + '</span>');
-		$('.ps-max-price').html(( (newValSecond > 10000000) ? '10M+' : ('$ '+newVal[1]) ));
+		$('.ps-max-price').html(( (newValSecond > 4000) ? '10M+' : ('$ '+newVal[1]) ));
 		$('input[name="price_fm"]').val( newValFirst);
-		$('input[name="price_to"]').val( (newValSecond > 10000000) ? 10050000 : newValSecond );
+		$('input[name="price_to"]').val( (newValSecond > 4000) ? 4001 : newValSecond );
 	}
 
 	$('.close-text').click(function(e){

@@ -363,11 +363,16 @@ header {
 	padding: 10px;
 	box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 6px 0 rgba(0, 0, 0, 0.3);
 	z-index: 2;
-	/*@include transition(all 0.3s ease);*/
+	@include transition(all 0.1s ease);
 
 	.is-fixed & {
-		padding: 0;
+		padding: 0px 10px;
+		background: none;
 		box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0), 0 3px 6px 0 rgba(0, 0, 0, 0);
+
+		@include breakpoint(tablet) {
+			padding: 0;
+		}
 
 	}
 

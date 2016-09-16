@@ -905,6 +905,38 @@ body {
 	}
 }
 
+.old-price {
+	display: inline-block;
+	font-size: 18px;
+	margin-right: 10px;
+	position: relative;
+	color: $coGrey;
+
+	@include breakpoint(mobile) {
+		font-size: 18px;
+	}
+
+	&:before {
+		content :'';
+		display: block;
+		width: 100%;
+		position: absolute;
+		top: 50%;
+		border-bottom: 1px solid red;
+		margin-top: -1px;
+	}
+}
+
+.new-price {
+	display: inline-block;
+	font-size: 18px;
+	color: $tertiaryOrange;
+
+	@include breakpoint(mobile) {
+		font-size: 18px;
+	}
+}
+
 img.alignright {float:right; margin:0 0 1em 1em;}
 img.alignleft {float:left; margin:0 1em 1em 0;}
 img.aligncenter {display: block; margin-left: auto; margin-right: auto;}

@@ -745,8 +745,8 @@
 
 	img {
 		position: absolute;
-		width: 100%;
-		height: auto;
+		width: auto;
+		height: 100%;
 		top: 50%;
 		left: 50%;
 		@include transform(translate(-50%, -50%) scale(1.1));
@@ -1127,7 +1127,6 @@
 	    }
 
 	    input[required]:valid + label, input[required]:focus + label, input:not([value=""]) + label{
-			xcolor: $coWhite;
 			font-size: 12px;
 
 		}
